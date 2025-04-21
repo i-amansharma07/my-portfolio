@@ -37,8 +37,8 @@ const NavItems = () => {
   return navItems.map((item, idx) => (
     <li
       key={idx}
-      className={`text-[#6d6d6d] dark:text-[#b4b4b4]
-        hover:text-black  dark:hover:text-white ${
+      className={`text-light-dim dark:text-dark-dim
+        hover:text-black  dark:hover:text-white delay-150 duration-200 ${
           pathName.includes(item.key) && "text-black dark:text-white"
         }`}
     >
