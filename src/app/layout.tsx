@@ -12,7 +12,12 @@ export const metadata = {
   description: "This is the description for my site",
 };
 
-//antialiased
+
+
+
+//my old CV site : https://i-amansharma07.github.io/CV/
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,8 +36,8 @@ export default function RootLayout({
         >
           <header className="relative top-0 z-20 md:sticky">
             <NavBar />
-            <div className="max-w-[900px] mx-auto px-4">{children}</div>
           </header>
+          <div className="max-w-[900px] mx-auto px-4">{children}</div>
         </ThemeProvider>
       </body>
     </html>
