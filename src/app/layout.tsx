@@ -1,14 +1,16 @@
-"use client";
-
 import NavBar from "@/components/navbar/NavBar";
 import "./globals.css";
 import ThemeProvider from "./themes/theme-provider";
 import { Inter, Roboto } from "next/font/google";
-import Head from "next/head";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Home | Aman",
+  description: "This is the description for my site",
+};
 
 //antialiased
 export default function RootLayout({
@@ -18,10 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-      <title>My page title</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
       <body
         className={`bg-[#fcfcfc] dark:bg-[#191919] antialiased ${inter.className}`}
       >

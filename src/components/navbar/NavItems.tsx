@@ -52,9 +52,9 @@ const NavDropDownItems = () => {
     <DropdownMenu>
       <DropdownMenuTrigger className="md:hidden border-0">Open</DropdownMenuTrigger>
       <DropdownMenuContent className="md:hidden bg-gray-200   dark:bg-gray-800">
-        {navItems.map((item) => {
+        {navItems.map((item, idx) => {
           return (
-            <Link href={item.key}>
+            <Link key={idx} href={item.key}>
               <DropdownMenuItem className="text-black dark:text-white">
                 {item.label}
               </DropdownMenuItem>
