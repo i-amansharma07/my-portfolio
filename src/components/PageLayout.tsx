@@ -13,7 +13,7 @@ export const FadeInSection =  ({ children }: { children: React.ReactNode }) => {
 
 
 export const FlexColumn = ({ children, className }: { children: React.ReactNode, className? : string }) => {
-  return (<div className={`flex flex-col gap-8 justify ${className}`}>
+  return (<div className={`flex flex-col gap-8  ${className}`}>
     {children}
     </div>);
 };
