@@ -20,4 +20,22 @@ export const FlexColumn = ({
   );
 };
 
+export const FlexRowToColumn = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`flex flex-col gap-y-2  md:flex-row md:gap-x-40 ${
+        className ? className : ""
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
 export default PageLayout;

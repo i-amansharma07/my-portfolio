@@ -2,6 +2,7 @@ import NavBar from "@/components/navbar/NavBar";
 import "./globals.css";
 import ThemeProvider from "./themes/theme-provider";
 import { Inter, Roboto } from "next/font/google";
+import { pageBg } from "../../utils/styles";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-[#fcfcfc] dark:bg-[#191919] antialiased ${inter.className}`}
+        className={`${pageBg} antialiased ${inter.className}`}
       >
         <ThemeProvider
           attribute="class"
