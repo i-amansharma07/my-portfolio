@@ -109,14 +109,11 @@ const WorkSection = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
           dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
         </h1>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt.
-        </h1>
+        <FlexColumn className="gap-4 mt-3 md:mt-5 flex-col-reverse">
+          {works.map((item) => (
+            <WorkCard key={item.name} work={item} />
+          ))}
+        </FlexColumn>
       </FlexColumn>
     </FlexRowToColumn>
   );
@@ -136,3 +133,63 @@ const MeSections = [
     component: WorkSection,
   },
 ];
+
+interface WorkCardType {
+  logo: string;
+  role: string;
+  name: string;
+  duration: string;
+  bgColor: string;
+  textColor: string;
+}
+
+const works: WorkCardType[] = [
+  {
+    logo: "https://internshala-uploads.internshala.com/logo/62e0e4c38530b1658905795.png.webp",
+    role: "Intern -  Android dev",
+    name: "BrickedIn",
+    duration: "3 Months",
+    bgColor: "bg-white",
+    textColor: "text-orange-500",
+  },
+  {
+    logo: "https://www.hackingly.in/_next/static/media/companyLogo.45fa23ea.png",
+    role: "Freelance - Full Stack",
+    name: "Hackingly",
+    duration: "6 Months",
+    bgColor: "bg-orange-400",
+    textColor: "text-white",
+  },
+  {
+    logo: "https://i0.wp.com/greyspacedigital.com/wp-content/uploads/2025/01/GS_Logo_White.png?fit=384%2C49&ssl=1",
+    role: "SDE",
+    name: "Greyspace",
+    duration: "Present(1.5yrs)",
+    bgColor: "bg-black",
+    textColor: "text-white",
+  },
+];
+
+//TODO - change the color on card while hover
+const WorkCard = ({ work }: { work: WorkCardType }) => {
+  return (
+    <div className="flex justify-between items-center py-3 px-2 hover:bg-gray-800 hover:shadow-2xl rounded-md transition-transform duration-300 transform hover:scale-110">
+      <div className="flex gap-4">
+        <div
+          className={`flex items-center justify-center rounded-full w-14 h-14 p-2  ${work.bgColor} `}
+        >
+          <h1 className={`${work.textColor} text-[9px] font-semibold`}>
+            {work.name}
+          </h1>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h1 className={`font-semibold text-black dark:text-white`}>
+            {work.name}
+          </h1>
+          <h1 className={`${textLightDark} text-sm`}>{work.role}</h1>
+        </div>
+      </div>
+      <h1 className={`${textLightDark} text-sm`}>{work.duration}</h1>
+    </div>
+  );
+};
