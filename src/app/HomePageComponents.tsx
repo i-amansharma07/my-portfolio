@@ -133,7 +133,13 @@ const BlogsSection = () => {
 };
 
 const TODOSection = () => {
-  return <div>THis is todo section</div>;
+  return (
+    <ul className="list-decimal mt-16">
+      <li>Make Me Section dark and white compatible</li>
+      <li>Change hover color on work cards</li>
+      <li>Make View Resume Clickable</li>
+    </ul>
+  );
 };
 
 export { HeroSection, BlogsSection, TODOSection };

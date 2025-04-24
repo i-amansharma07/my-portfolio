@@ -6,7 +6,7 @@ const Home = () => {
     <PageLayout>
       <HeroSection />
       <BlogsSection />
-      {/* <TODOSection /> */}
+      <TODOSection />
     </PageLayout>
   );
 };

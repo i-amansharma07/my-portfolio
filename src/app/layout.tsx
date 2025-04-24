@@ -13,11 +13,7 @@ export const metadata = {
   description: "This is the description for my site",
 };
 
-
-
-
 //my old CV site : https://i-amansharma07.github.io/CV/
-
 
 export default function RootLayout({
   children,
@@ -26,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${pageBg} antialiased ${inter.className}`}
-      >
+      <body className={`${pageBg} antialiased ${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

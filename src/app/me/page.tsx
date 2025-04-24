@@ -2,9 +2,20 @@
 
 import PageLayout, { FlexRowToColumn } from "@/components/PageLayout";
 import { FadeInSection, FlexColumn } from "@/components/PageLayout";
-import { Dot } from "lucide-react";
+import {
+  Dot,
+  FileUser,
+  FileText,
+  Mail,
+  Github,
+  Instagram,
+  Twitter,
+  MoveUpRight,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { textLightDark } from "../../../utils/styles";
+import { LucideProps } from "lucide-react";
+import { ForwardRefExoticComponent } from "react";
 
 const imageUrl = `https://images.unsplash.com/photo-1694805025253-0167c10019c0?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`;
 
@@ -25,7 +36,7 @@ export default function Me() {
   useEffect(() => {
     let current = 0;
     setInterval(() => {
-      if (current === 8) current = 0;
+      if (current === whoMeTranslation.length) current = 0;
       setWhoMe(whoMeTranslation[current]);
       current++;
     }, 4000);
@@ -119,21 +130,6 @@ const WorkSection = () => {
   );
 };
 
-const MeSections = [
-  {
-    label: "About",
-    component: AboutSection,
-  },
-  {
-    label: "Work",
-    component: WorkSection,
-  },
-  {
-    label: "Resume",
-    component: WorkSection,
-  },
-];
-
 interface WorkCardType {
   logo: string;
   role: string;
@@ -149,7 +145,7 @@ const works: WorkCardType[] = [
     role: "Intern -  Android dev",
     name: "BrickedIn",
     duration: "3 Months",
-    bgColor: "bg-white",
+    bgColor: "bg-gray-100",
     textColor: "text-orange-500",
   },
   {
@@ -173,7 +169,7 @@ const works: WorkCardType[] = [
 //TODO - change the color on card while hover
 const WorkCard = ({ work }: { work: WorkCardType }) => {
   return (
-    <div className="flex justify-between items-center py-3 px-2 hover:bg-gray-800 hover:shadow-2xl rounded-md transition-transform duration-300 transform hover:scale-110">
+    <div className="flex justify-between items-center py-3 px-2 hover:bg-gray-800 hover:shadow-2xl rounded-md transition-transform duration-300 transform hover:scale-105">
       <div className="flex gap-4">
         <div
           className={`flex items-center justify-center rounded-full w-14 h-14 p-2  ${work.bgColor} `}
@@ -193,3 +189,103 @@ const WorkCard = ({ work }: { work: WorkCardType }) => {
     </div>
   );
 };
+
+const ResumeSection = () => {
+  return (
+    <FlexRowToColumn>
+      <div className={`min-w-24 ${textLightDark}`}>Resume</div>
+      <FlexColumn className="gap-y-4 w-full">
+        <h1>
+          Want to know more about my professional experience? Check out my
+          resume below.
+        </h1>
+        <div className="underline-offset-4 inline-flex w-fit items-center gap-2 rounded-lg border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800">
+          <FileText size={16} />
+          <h1 className={`text-black dark:text-white text-xs`}>View Resume</h1>
+        </div>
+      </FlexColumn>
+    </FlexRowToColumn>
+  );
+};
+
+const ConnectSection = () => {
+  return (
+    <FlexRowToColumn>
+      <div className={`min-w-24 ${textLightDark}`}>Connect</div>
+      <FlexColumn className="gap-y-4 w-full">
+        <h1>Have a question or just want to chat? Feel free to text me.</h1>
+        <ul className="grid flex-grow grid-cols-1 gap-4 md:grid-cols-2">
+          {connects.map((Item) => (
+            <ConnectComp Item={Item} />
+          ))}
+        </ul>
+      </FlexColumn>
+    </FlexRowToColumn>
+  );
+};
+
+interface Connect {
+  logo: ForwardRefExoticComponent<Omit<LucideProps, "ref">>;
+  place: string;
+  link: string;
+}
+
+const connects: Connect[] = [
+  {
+    logo: Mail,
+    place: "Mail",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Github,
+    place: "Github",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Instagram,
+    place: "Instagram",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Twitter,
+    place: "Twitter",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+];
+
+const ConnectComp = ({ Item }: { Item: Connect }) => {
+  return (
+    <li className="col-span-1 transition-opacity">
+      <a
+        className="underline-offset-4  inline-grid w-full rounded-lg border p-4 border-neutral-200  text-sm font-medium text-neutral-900  hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800 hover:shadow-2xl  transition-transform duration-300 transform hover:scale-105"
+        target="_blank"
+        href={Item.link}
+      >
+        <div className="flex items-center gap-3">
+          <Item.logo size={24} />
+          {Item.place}
+          <MoveUpRight size={16} className="ml-auto" />
+        </div>
+      </a>
+    </li>
+  );
+};
+
+const MeSections = [
+  {
+    label: "About",
+    component: AboutSection,
+  },
+  {
+    label: "Work",
+    component: WorkSection,
+  },
+  {
+    label: "Resume",
+    component: ResumeSection,
+  },
+  {
+    label: "Connect",
+    component: ConnectSection,
+  },
+];
