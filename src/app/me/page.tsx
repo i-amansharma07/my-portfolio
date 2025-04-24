@@ -216,7 +216,7 @@ const ConnectSection = () => {
         <h1>Have a question or just want to chat? Feel free to text me.</h1>
         <ul className="grid flex-grow grid-cols-1 gap-4 md:grid-cols-2">
           {connects.map((Item) => (
-            <ConnectComp Item={Item} />
+            <ConnectComp key={Item.place} Item={Item} />
           ))}
         </ul>
       </FlexColumn>

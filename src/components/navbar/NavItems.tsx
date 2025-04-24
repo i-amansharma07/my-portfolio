@@ -1,34 +1,42 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { Book, User, BriefcaseBusiness, Code, Camera, Dot } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   {
     label: "Blogs/Stories",
     key: "/blogs",
+    icon: Book,
   },
   {
     label: "Me?",
     key: "/me",
+    icon: User,
   },
   {
     label: "Work",
     key: "/work",
+    icon: BriefcaseBusiness,
   },
   {
     label: "Projects",
     key: "/projects",
+    icon: Code,
   },
   {
     label: "Clicks",
     key: "/clicks",
+    icon: Camera,
   },
 ];
 
@@ -47,23 +55,60 @@ const NavItems = () => {
   ));
 };
 
-const NavDropDownItems = () => {
+const MobileNavBar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0);
+  const pathName = usePathname();
+
+  function controlNavbar() {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+    setLastScroll(currentScroll);
+  }
+
+  useEffect(() => {
+    setLastScroll(window.scrollY);
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScroll]);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="md:hidden border-0">Open</DropdownMenuTrigger>
-      <DropdownMenuContent className="md:hidden bg-gray-200   dark:bg-gray-800">
-        {navItems.map((item, idx) => {
-          return (
-            <Link key={idx} href={item.key}>
-              <DropdownMenuItem className="text-black dark:text-white">
-                {item.label}
-              </DropdownMenuItem>
+    <nav
+      className={`${
+        show ? "fixed" : "fixed translate-y-20"
+      }  bg-white dark:bg-gray-800 rounded-t-3xl  bottom-0  w-full mx-auto  px-4 transition delay-150 sm:hidden`}
+    >
+      <div
+        className={`rounded-t-3xl bg-white dark:bg-gray-800 flex justify-evenly py-2`}
+      >
+        {navItems.map((Item) => (
+          <div key={Item.key} className="flex flex-col items-center">
+            <Link
+              href={Item.key}
+              className={`p-2 opacity-35 dark:text-white rounded-full ${
+                pathName.includes(Item.key) &&
+                "dark:text-yellow-500 opacity-100"
+              }`}
+            >
+              <Item.icon size={20} />
             </Link>
-          );
-        })}
-      </DropdownMenuContent>
-    </DropdownMenu>
+            {pathName.includes(Item.key) && (
+              <span className={`flex text-yellow-500 -mt-2`}>
+                <Dot size={18} />
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </nav>
   );
 };
 
-export { NavItems, NavDropDownItems };
+export { NavItems, MobileNavBar };
