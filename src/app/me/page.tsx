@@ -166,10 +166,9 @@ const works: WorkCardType[] = [
   },
 ];
 
-//TODO - change the color on card while hover
 const WorkCard = ({ work }: { work: WorkCardType }) => {
   return (
-    <div className="flex justify-between items-center py-3 px-2 hover:bg-gray-800 hover:shadow-2xl rounded-md transition-transform duration-300 transform hover:scale-105">
+    <div className="flex justify-between items-center py-3 px-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:shadow-xl rounded-md transition-transform duration-300 transform hover:scale-105">
       <div className="flex gap-4">
         <div
           className={`flex items-center justify-center rounded-full w-14 h-14 p-2  ${work.bgColor} `}
@@ -199,10 +198,14 @@ const ResumeSection = () => {
           Want to know more about my professional experience? Check out my
           resume below.
         </h1>
-        <div className="underline-offset-4 inline-flex w-fit items-center gap-2 rounded-lg border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800">
+        <a
+          href="https://drive.google.com/file/d/1QXDEyV5TFz2KkXT875HleAXOOVpiYX7J/view?usp=sharing"
+          target="_blank"
+          className="underline-offset-4 inline-flex w-fit items-center gap-2 rounded-lg border  border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-200 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800"
+        >
           <FileText size={16} />
           <h1 className={`text-black dark:text-white text-xs`}>View Resume</h1>
-        </div>
+        </a>
       </FlexColumn>
     </FlexRowToColumn>
   );
@@ -257,7 +260,7 @@ const ConnectComp = ({ Item }: { Item: Connect }) => {
   return (
     <li className="col-span-1 transition-opacity">
       <a
-        className="underline-offset-4  inline-grid w-full rounded-lg border p-4 border-neutral-200  text-sm font-medium text-neutral-900  hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800 hover:shadow-2xl  transition-transform duration-300 transform hover:scale-105"
+        className="underline-offset-4  inline-grid w-full rounded-lg border p-4 border-neutral-200  text-sm font-medium text-neutral-900  hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800 hover:shadow-xl  transition-transform duration-300 transform hover:scale-105"
         target="_blank"
         href={Item.link}
       >

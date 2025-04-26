@@ -135,9 +135,7 @@ const BlogsSection = () => {
 const TODOSection = () => {
   return (
     <ul className="list-decimal mt-16">
-      <li>Make Me Section dark and white compatible</li>
-      <li>Change hover color on work cards</li>
-      <li>Make View Resume Clickable</li>
+      
     </ul>
   );
 };

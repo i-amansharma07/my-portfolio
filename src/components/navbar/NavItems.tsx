@@ -26,11 +26,6 @@ const navItems = [
   {
     label: "Work",
     key: "/work",
-    icon: BriefcaseBusiness,
-  },
-  {
-    label: "Projects",
-    key: "/projects",
     icon: Code,
   },
   {
