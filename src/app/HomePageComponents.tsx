@@ -135,7 +135,10 @@ const BlogsSection = () => {
 const TODOSection = () => {
   return (
     <ul className="list-decimal mt-16">
-      
+      <h1>Build Blog Section</h1>
+      <h1>See how to render markdown file in react</h1>
+      <h1>Make api endpoint to fetch blog content</h1>
+      <h1>Might need to use DB as well to store blog info</h1>
     </ul>
   );
 };
