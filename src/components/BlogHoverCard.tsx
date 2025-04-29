@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {CalendarDays} from "lucide-react";
-
+import { CalendarDays } from "lucide-react";
 
 export default function BlogHoverCard({ blog }: { blog: any }) {
   const [visible, setVisible] = useState(false);
@@ -17,10 +16,10 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onMouseMove={handleMouseMove}
-      className="relative w-full text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white transition delay-150 duration-200 "
+      className="relative w-fit text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white transition delay-150 duration-200"
     >
       {/* Trigger */}
-      <div className="hidden md:flex cursor-pointer">
+      <div className="hidden md:flex w-fit cursor-pointer">
         <div className="flex gap-x-32 lg:gap-x-40">
           <h1>{blog.dateTime}</h1>
           <h1>{blog.title}</h1>
@@ -46,7 +45,7 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
         <div
           className="max-w-[300px]  hidden  md:flex fixed z-50 min-w-80 bg-gray-100 dark:bg-gray-900 p-2.5 rounded-md shadow-lg transition-opacity duration-150"
           style={{
-            top: (position.y + 15) - 155,
+            top: position.y + 15 - 155,
             left: position.x - 50,
           }}
         >
@@ -62,7 +61,7 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
                 {blog.description}
               </p>
               <div className="flex items-center gap-2 pt-2">
-                <CalendarDays size={14}/>
+                <CalendarDays size={14} />
                 <span className="text-xs text-muted-foreground text-light-dim dark:text-dark-dim">
                   {blog.dateTime}
                 </span>
