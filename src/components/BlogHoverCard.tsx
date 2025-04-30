@@ -16,7 +16,7 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onMouseMove={handleMouseMove}
-      className="relative w-fit text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white transition delay-150 duration-200"
+      className="relative w-full md:w-fit text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white transition delay-150 duration-200"
     >
       {/* Trigger */}
       <div className="hidden md:flex w-fit cursor-pointer">

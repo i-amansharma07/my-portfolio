@@ -8,6 +8,6 @@ export default function Blogs() {
     document.title = "Blogs | Aman"
   },[])
     return (
-      <div className="text-2xl text-white">Blogs page</div>
+      <div className="text-2xl text-white">Blogs page for adults</div>
     );
   }
