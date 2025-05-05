@@ -41,11 +41,16 @@ const NavItems = () => {
     <li
       key={idx}
       className={`text-light-dim dark:text-dark-dim
-        hover:text-black  dark:hover:text-white delay-150 duration-200 ${
-          pathName.includes(item.key) && "text-black dark:text-white"
-        }`}
+        hover:text-black  dark:hover:text-white delay-150 duration-200`}
     >
-      <Link href={item.key}>{item.label}</Link>
+      <Link
+        className={`${
+          pathName.includes(item.key) && "dark:text-white text-black"
+        }`}
+        href={item.key}
+      >
+        {item.label}
+      </Link>
     </li>
   ));
 };

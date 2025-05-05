@@ -7,7 +7,7 @@ const nextConfig = {
 
   // Allow images from Wikimedia
   images: {
-    domains: ['upload.wikimedia.org','media.istockphoto.com'],
+    domains: ['upload.wikimedia.org','media.istockphoto.com','miro.medium.com','i.kym-cdn.com','static.wixstatic.com','i.redd.it','preview.redd.it','encrypted-tbn0.gstatic.com'],
   },
 }
 

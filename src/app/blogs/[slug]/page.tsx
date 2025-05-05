@@ -27,10 +27,14 @@ const BlogPage = () => {
     }
   }, [blogId]);
 
+  useEffect(() => {
+    document.title = "Blog | Aman";
+  }, []);
+
   return (
     <PageLayout>
       {BlogComponent ? (
-        <FadeInSection>
+        <FadeInSection className="text-yellow-300">
           <BlogComponent />
         </FadeInSection>
       ) : (

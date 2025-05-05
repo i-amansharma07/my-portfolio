@@ -29,7 +29,7 @@ export default function BlogHoverCard({ blog }: { blog: Blog }) {
       </div>
 
       <div className="w-full md:hidden">
-        <div className="flex justify-between">
+        <Link href={`/blogs/${blog.id}`} className="flex justify-between">
           <div className="flex flex-col gap-1 justify-center">
             <h1>{blog.title}</h1>
             <h1 className="text-sm opacity-70">{blog.dateTime}</h1>
@@ -39,7 +39,7 @@ export default function BlogHoverCard({ blog }: { blog: Blog }) {
             src={blog.image}
             alt={blog.id}
           />
-        </div>
+        </Link>
       </div>
 
       {/* Hover Content */}

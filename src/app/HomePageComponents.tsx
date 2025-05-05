@@ -68,13 +68,16 @@ const BlogsSection = () => {
           Latest Wanders
         </h1>
         <FlexColumn>
-          {allBlogs.slice(3).map((inputBlog) => {
+          {allBlogs.slice(0, 3).map((inputBlog) => {
             return <BlogHoverCard key={inputBlog.id} blog={inputBlog} />;
           })}
-          <div className="see-all transition delay-100 duration-100 gap-2 flex w-fit items-center cursor-pointer hover:underline text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white text-base">
+          <Link
+            href="/blogs"
+            className="see-all transition delay-100 duration-100 gap-2 flex w-fit items-center cursor-pointer hover:underline text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white text-base"
+          >
             <MoveUpRight size={15} />
             <h1>See All</h1>
-          </div>
+          </Link>
         </FlexColumn>
       </FlexColumn>
     </FadeInSection>

@@ -34,6 +34,10 @@ export default function Me() {
   const [whoMe, setWhoMe] = useState("Who Me?");
 
   useEffect(() => {
+    document.title = "Me | Aman";
+  }, []);
+
+  useEffect(() => {
     let current = 0;
     setInterval(() => {
       if (current === whoMeTranslation.length) current = 0;

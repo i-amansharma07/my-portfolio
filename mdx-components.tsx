@@ -49,9 +49,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </blockquote>
     ),
     code: ({ children }) => (
-      <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono text-pink-600 dark:text-pink-400">
-        {children}
-      </code>
+      <code className="px-1 py-0.5 rounded text-sm font-mono">{children}</code>
     ),
     pre: ({ children }) => (
       <pre className="bg-gray-900 text-white p-4 rounded overflow-x-auto mb-6 text-sm">
@@ -63,7 +61,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...(props as ImageProps)}
         width={1200} // use high value
         height={200} // aspect ratio will be maintained
-        className="w-full max-h-96 h-auto rounded-md shadow-lg my-6 object-center"
+        className="w-full max-h-96 h-auto rounded-md shadow-lg my-6 object-cover"
         alt={props.alt || ""}
       />
     ),
