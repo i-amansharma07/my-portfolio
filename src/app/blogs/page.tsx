@@ -1,13 +1,16 @@
-"use client"
+"use client";
 
-
+import PageLayout from "@/components/PageLayout";
 import { useEffect } from "react";
+import { BlogsSection } from "../HomePageComponents";
 
 export default function Blogs() {
-  useEffect(()=> {
-    document.title = "Blogs | Aman"
-  },[])
-    return (
-      <div className="text-2xl text-white">Blogs page for adults</div>
-    );
-  }
+  useEffect(() => {
+    document.title = "Blogs | Aman";
+  }, []);
+  return (
+    <PageLayout>
+      <BlogsSection />
+    </PageLayout>
+  );
+}

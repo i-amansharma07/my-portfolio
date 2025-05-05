@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import BlogHoverCard from "@/components/BlogHoverCard";
+import { BlogType, allBlogs } from "../../utils/BlogsData";
 
 const HeroSection = () => {
   return (
@@ -59,58 +60,6 @@ const HeroSection = () => {
   );
 };
 
-const blogs: Blog[] = [
-  {
-    id: "alice-in-the-tinder-land",
-    title: "Alice in the tinder land",
-    image:
-      "https://lumiere-a.akamaihd.net/v1/images/p_aliceinwonderland_19875_ad409a49.jpeg?region=0%2C0%2C540%2C810",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-     Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-     maxime molestiae soluta exercitationem? Nostrum quia, similique 
-     officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
-  {
-    id: "react-vs-next",
-    title: "React VS Next",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWWBJ_Aqr1Phj1-0hqgYWv_weTm0AzidO0g&s",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-     Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-     maxime molestiae soluta exercitationem? Nostrum quia, similique 
-     officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
-  {
-    id: "brain-rotting",
-    title: "Brain rotting",
-    image:
-      "https://cdn-images.dzcdn.net/images/cover/895f411787744baf42ed6e0d52bf7200/0x1900-000000-80-0-0.jpg",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-     Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-     maxime molestiae soluta exercitationem? Nostrum quia, similique 
-     officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
-];
-
-interface Blog {
-  id: string;
-  title: string;
-  image: string;
-  description: string;
-  tags: string[];
-  readTime: string;
-  dateTime: string;
-}
-
 const BlogsSection = () => {
   return (
     <FadeInSection>
@@ -119,7 +68,7 @@ const BlogsSection = () => {
           Latest Wanders
         </h1>
         <FlexColumn>
-          {blogs.map((inputBlog) => {
+          {allBlogs.slice(3).map((inputBlog) => {
             return <BlogHoverCard key={inputBlog.id} blog={inputBlog} />;
           })}
           <div className="see-all transition delay-100 duration-100 gap-2 flex w-fit items-center cursor-pointer hover:underline text-light-dim hover:text-black dark:text-dark-dim dark:hover:text-white text-base">

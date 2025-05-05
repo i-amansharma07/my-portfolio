@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { CalendarDays } from "lucide-react";
+import Link from "next/link";
+import { Blog } from "@/app/HomePageComponents";
 
-export default function BlogHoverCard({ blog }: { blog: any }) {
+export default function BlogHoverCard({ blog }: { blog: Blog }) {
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -20,10 +22,10 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
     >
       {/* Trigger */}
       <div className="hidden md:flex w-fit cursor-pointer">
-        <div className="flex gap-x-32 lg:gap-x-40">
+        <Link href={`/blogs/${blog.id}`} className="flex gap-x-32 lg:gap-x-40">
           <h1>{blog.dateTime}</h1>
           <h1>{blog.title}</h1>
-        </div>
+        </Link>
       </div>
 
       <div className="w-full md:hidden">
