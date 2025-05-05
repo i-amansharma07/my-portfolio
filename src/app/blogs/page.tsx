@@ -36,11 +36,15 @@ const BlogCard = ({ blog }: { blog: BlogType }) => {
   return (
     <div className="max-w-xl relative mx-auto mt-8 bg-white dark:bg-neutral-800 shadow-lg border border-black dark:border-neutral-900  rounded-md hover:shadow-xl  transition-transform duration-150 transform hover:scale-[98%]">
       <div className="p-6 group">
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+        <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
           {blog.dateTime} • {blog.readTime}
         </p>
         <Link href={`/blogs/${blog.id}`}>
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 transition-all duration-300 ">
+          <h2
+            className={`text-xl font-bold text-gray-800 dark:text-white mb-2 transition-all duration-300 ${
+              blog.title.length > 30 && "line-clamp-1"
+            }`}
+          >
             {blog.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4 transition-transform duration-300 line-clamp-3">

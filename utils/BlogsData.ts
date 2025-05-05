@@ -49,8 +49,8 @@ const allBlogs: BlogType[] = [
     dateTime: "sat oct 12, 2024",
   },
   {
-    id: "alice-in-the-tinder-landdsfsadnbasdfsd",
-    title: "Alice in the tinder land",
+    id: "react-server-component",
+    title: "Understanding React Server Components: A Practical Guide",
     image:
       "https://lumiere-a.akamaihd.net/v1/images/p_aliceinwonderland_19875_ad409a49.jpeg?region=0%2C0%2C540%2C810",
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -61,19 +61,7 @@ const allBlogs: BlogType[] = [
     readTime: "8 mins",
     dateTime: "sat oct 12, 2024",
   },
-  {
-    id: "react-vs-nextsdfsdfsdf",
-    title: "React VS Next",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWWBJ_Aqr1Phj1-0hqgYWv_weTm0AzidO0g&s",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-       maxime molestiae soluta exercitationem? Nostrum quia, similique 
-       officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
+  
 ];
 
 export { allBlogs };
