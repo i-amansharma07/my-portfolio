@@ -69,7 +69,7 @@ const BlogFooter = ({ blog }: { blog: BlogType | undefined }) => {
 const TagCard = ({ tagName }: { tagName: string }) => {
   return (
     <Link
-      className="underline-offset-4 px-4 py-2 rounded-lg bg-neutral-800 text-sm"
+      className="underline-offset-4 px-4 py-2 rounded-lg bg-neutral-200  dark:bg-neutral-800 text-sm"
       href={`/blogs/tag/${tagName.toLowerCase()}`}
     >
       {tagName}
