@@ -1,8 +1,10 @@
 "use client";
 
-import PageLayout, { FadeInSection } from "@/components/PageLayout";
+import PageLayout, { FadeInSection, FlexColumn } from "@/components/PageLayout";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useEffect, useState } from "react";
+import { allBlogs, BlogType } from "../../../../utils/BlogsData";
 
 const BlogPage = () => {
   const pathName = usePathname();
@@ -10,6 +12,10 @@ const BlogPage = () => {
   const blogId = subpath[subpath.length - 1];
 
   const [BlogComponent, setBlogComponent] = useState<null | any>(null);
+
+  const blogArrayItem: BlogType | undefined = allBlogs.find(
+    (item) => item.id === blogId
+  );
 
   useEffect(() => {
     const loadBlog = async () => {
@@ -34,8 +40,9 @@ const BlogPage = () => {
   return (
     <PageLayout>
       {BlogComponent ? (
-        <FadeInSection className="text-yellow-300">
+        <FadeInSection>
           <BlogComponent />
+          <BlogFooter blog={blogArrayItem} />
         </FadeInSection>
       ) : (
         <div className="w-full h-full justify-center items-center">
@@ -43,6 +50,30 @@ const BlogPage = () => {
         </div>
       )}
     </PageLayout>
+  );
+};
+
+const BlogFooter = ({ blog }: { blog: BlogType | undefined }) => {
+  return (
+    <FlexColumn className="mb-10">
+      <h1 className="text-2xl font-bold mt-5">Tags</h1>
+      <div className="flex gap-5">
+        {blog?.tags?.map((tag) => (
+          <TagCard key={tag} tagName={tag} />
+        ))}
+      </div>
+    </FlexColumn>
+  );
+};
+
+const TagCard = ({ tagName }: { tagName: string }) => {
+  return (
+    <Link
+      className="underline-offset-4 px-4 py-2 rounded-lg bg-neutral-800 text-sm"
+      href={`/blogs/tag/${tagName.toLowerCase()}`}
+    >
+      {tagName}
+    </Link>
   );
 };
 
