@@ -32,6 +32,16 @@ export const FlexColumn = ({
   );
 };
 
+export const FlexRow = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <div className={`flex ${className ? className : ""}`}>{children}</div>;
+};
+
 export const FlexRowToColumn = ({
   children,
   className,

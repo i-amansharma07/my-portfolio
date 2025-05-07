@@ -215,7 +215,7 @@ const ResumeSection = () => {
   );
 };
 
-const ConnectSection = () => {
+export const ConnectSection = () => {
   return (
     <FlexRowToColumn>
       <div className={`min-w-24 ${textLightDark}`}>Connect</div>
@@ -231,13 +231,13 @@ const ConnectSection = () => {
   );
 };
 
-interface Connect {
+export interface ConnectType {
   logo: ForwardRefExoticComponent<Omit<LucideProps, "ref">>;
   place: string;
   link: string;
 }
 
-const connects: Connect[] = [
+export const connects: ConnectType[] = [
   {
     logo: Mail,
     place: "Mail",
@@ -260,7 +260,7 @@ const connects: Connect[] = [
   },
 ];
 
-const ConnectComp = ({ Item }: { Item: Connect }) => {
+const ConnectComp = ({ Item }: { Item: ConnectType }) => {
   return (
     <li className="col-span-1 transition-opacity">
       <a

@@ -51,10 +51,13 @@ const HeroSection = () => {
         <h1 className="one-liner-intro dark:text-white text-black text-base">
           Everything about me, engineering and life as I see it.
         </h1>
-        <div className="connect-with-me gap-2 flex w-fit items-center cursor-pointer hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400 text-base -mt-4">
+        <Link
+          href="/links"
+          className="connect-with-me gap-2 flex w-fit items-center cursor-pointer text-blue-500 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400 text-base -mt-4"
+        >
           <MoveUpRight size={15} />
           <h1>More ways to connect</h1>
-        </div>
+        </Link>
       </FlexColumn>
     </FadeInSection>
   );
