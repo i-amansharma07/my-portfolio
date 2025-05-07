@@ -5,7 +5,11 @@ import { useEffect } from "react";
 import { allBlogs, BlogType } from "../../../utils/BlogsData";
 import Link from "next/link";
 
-export default function Blogs() {
+export default function Blogs({
+  filteredBlogs,
+}: {
+  filteredBlogs: BlogType[];
+}) {
   useEffect(() => {
     document.title = "Blogs | Aman";
   }, []);
@@ -14,15 +18,23 @@ export default function Blogs() {
       <FadeInSection>
         <FlexColumn className="gap-5">
           <div className="flex flex-col gap-1">
-            <h1 className="text-3xl font-bold">Thoughts</h1>
+            <h1 className="text-3xl font-bold">
+              {filteredBlogs
+                ? `${filteredBlogs.length} ${
+                    filteredBlogs.length === 1 ? "Item" : "Items"
+                  } found`
+                : "Thoughts"}
+            </h1>
             <div className="Sub-heading flex  items-center text-light-dim  dark:text-dark-dim text-sm">
-              <h1>
-                {allBlogs.length} bleh about life, engineering and more ...
-              </h1>
+              {!filteredBlogs && (
+                <h1>
+                  {allBlogs.length} bleh about life, engineering and more ...
+                </h1>
+              )}
             </div>
           </div>
           <div className="flex flex-col items-center gap-5 sm:grid sm:grid-cols-2 sm:gap-10 -mt-5">
-            {allBlogs.map((item) => (
+            {(filteredBlogs || allBlogs).map((item) => (
               <BlogCard key={item.id} blog={item} />
             ))}
           </div>
