@@ -7,6 +7,21 @@ export interface BlogType {
   readTime: string;
   dateTime: string;
 }
+export interface TagType {
+  personal: string;
+  tech: string;
+  fe: string;
+  be: string;
+  randomThoughts: string;
+}
+
+const allTags: TagType = {
+  personal: "Personal",
+  tech: "Technology",
+  fe: "Front-end",
+  be: "Back-end",
+  randomThoughts: "randomThoughts",
+};
 
 const allBlogs: BlogType[] = [
   {
@@ -18,7 +33,7 @@ const allBlogs: BlogType[] = [
        Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
        maxime molestiae soluta exercitationem? Nostrum quia, similique 
        officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
+    tags: [allTags.personal, allTags.fe],
     readTime: "8 mins",
     dateTime: "sat oct 12, 2024",
   },
@@ -31,7 +46,7 @@ const allBlogs: BlogType[] = [
        Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
        maxime molestiae soluta exercitationem? Nostrum quia, similique 
        officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
+    tags: [allTags.personal, allTags.personal],
     readTime: "8 mins",
     dateTime: "sat oct 12, 2024",
   },
@@ -44,7 +59,7 @@ const allBlogs: BlogType[] = [
        Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
        maxime molestiae soluta exercitationem? Nostrum quia, similique 
        officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
+    tags: [allTags.personal, allTags.fe],
     readTime: "8 mins",
     dateTime: "sat oct 12, 2024",
   },
@@ -57,11 +72,20 @@ const allBlogs: BlogType[] = [
        Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
        maxime molestiae soluta exercitationem? Nostrum quia, similique 
        officiis incidunt expedita corrupti.`,
-    tags: ["Fiction", "Hot chick", "Darma", "Girls"],
+    tags: [allTags.personal, allTags.randomThoughts, allTags.fe],
     readTime: "8 mins",
     dateTime: "sat oct 12, 2024",
   },
-  
 ];
+
+export const findBlogsWithTag = (tag: string) => {
+  let blogArray: BlogType[] = [];
+
+  blogArray = allBlogs.filter((blog) => {
+    return blog.tags.find((tagItem) => tagItem.toLowerCase() === tag);
+  });
+
+  return blogArray;
+};
 
 export { allBlogs };
