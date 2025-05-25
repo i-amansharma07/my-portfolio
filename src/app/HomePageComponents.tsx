@@ -90,7 +90,6 @@ const BlogsSection = () => {
 const TODOSection = () => {
   return (
     <ul className="list-decimal mt-16">
-      <h1>Review PR, make code better</h1>
       <h1>Add Blog view count</h1>
       <h1>Make Image support in app better(store them locally/lazyloading)</h1>
     </ul>

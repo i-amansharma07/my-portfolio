@@ -5,7 +5,11 @@ const PageLayout = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={`flex flex-col mb-14 ${className}`}>{children}</div>;
+  return (
+    <div className={`flex flex-col mb-14 ${className ? className : ""}`}>
+      {children}
+    </div>
+  );
 };
 
 export const FadeInSection = ({
@@ -15,7 +19,11 @@ export const FadeInSection = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className="fade-in-up mt-8 md:mt-10">{children}</div>;
+  return (
+    <div className={`fade-in-up mt-8 md:mt-10 ${className ? className : ""}`}>
+      {children}
+    </div>
+  );
 };
 
 export const FlexColumn = ({

@@ -50,7 +50,7 @@ export default function Me() {
     <PageLayout>
       <FadeInSection>
         <FlexColumn className="gap-y-20">
-          <div className="heading flex flex-col gap-1">
+          <FlexColumn className="heading gap-y-1">
             <h1
               key={whoMe}
               className="text-3xl text-black dark:text-white font-bold animate-slide-in-left"
@@ -60,7 +60,7 @@ export default function Me() {
             <h1 className="text-sm text-light-dim dark:text-dark-dim">
               Okay so...
             </h1>
-          </div>
+          </FlexColumn>
           <img
             className="cover-image hidden md:flex rounded-md  max-h-[300px] w-full min-h-[300px] -mt-10"
             src={imageUrl}

@@ -14,7 +14,13 @@ const NavBar = () => {
         className={`${pageBg} mx-auto flex max-w-[900px] items-center justify-between gap-3 px-4 pt-4 pb-4 opacity-95`}
       >
         <Link href="/">
-          <Squirrel size={35} />
+          <Image
+            className="rounded-full object-center filter dark:invert"
+            src={`/marsh-logo.png`}
+            alt={"Logo"}
+            width="35"
+            height="35"
+          />
         </Link>
         <ul className="gap-x-12 hidden text-sm md:flex cursor-pointer">
           <NavItems />
