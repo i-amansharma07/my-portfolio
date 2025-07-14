@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 import PageLayout, {
@@ -7,7 +6,6 @@ import PageLayout, {
   FlexRow,
   FlexRowToColumn,
 } from "@/components/PageLayout";
-import { useEffect } from "react";
 import { textLightDark } from "../../../utils/styles";
 import { Dot } from "lucide-react";
 import Link from "next/link";
@@ -66,10 +64,12 @@ const WorkCard = ({ work }: { work: WorkType }) => {
   return (
     <Link href={`/work/${work.id}`}>
       <FlexRowToColumn className="md:opacity-65 hover:opacity-100 gap-y-5">
-        <img
-          className="rounded-md h-56 md:max-w-[300px] md:max-h-[150px] md:min-w-[300px] md:min-h-[150px] object-cover"
+        <Image
+          className="rounded-md h-56  object-cover md:max-w-[300px] md:max-h-[150px] md:min-w-[300px] md:min-h-[150px]"
           src={work.image}
           alt={work.id}
+          width={500}
+          height={500}
         />
         <FlexColumn className="gap-y-1">
           <h1 className={`text-base flex items-center`}>
@@ -82,3 +82,4 @@ const WorkCard = ({ work }: { work: WorkType }) => {
     </Link>
   );
 };
+
