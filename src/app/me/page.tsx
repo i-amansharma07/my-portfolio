@@ -4,24 +4,18 @@ import PageLayout, { FlexRowToColumn } from "@/components/PageLayout";
 import { FadeInSection, FlexColumn } from "@/components/PageLayout";
 import {
   Dot,
-  FileUser,
   FileText,
-  Mail,
-  Github,
-  Instagram,
-  Twitter,
   MoveUpRight,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { textLightDark } from "../../../utils/styles";
 import { LucideProps } from "lucide-react";
 import { ForwardRefExoticComponent } from "react";
-
-const imageUrl = `https://images.unsplash.com/photo-1694805025253-0167c10019c0?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`;
+import { connects } from "../../../utils/constants";
 
 const whoMeTranslation = [
-  "Qui, moi ?",
   "कौन, मैं?",
+  "Qui, moi ?",
   "谁，我？",
   "누구, 나?",
   "誰、私？",
@@ -62,8 +56,8 @@ export default function Me() {
             </h1>
           </FlexColumn>
           <img
-            className="cover-image hidden md:flex rounded-md  max-h-[300px] w-full min-h-[300px] -mt-10"
-            src={imageUrl}
+            className="cover-image rounded-md  max-h-[300px] w-full min-h-[300px] -mt-10 object-cover object-bottom"
+            src="/media/dalai-hills.jpg"
             alt={"cover-image"}
           />
           {MeSections.map((Item) => {
@@ -95,19 +89,35 @@ const AboutSection = () => {
           <h1>امن شرما</h1>
         </div>
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
+          I love building cool stuff—basically anything that sparks my curiosity
+          or teaches me something new. Coding gives me this weird thrill I can’t
+          really explain, like solving a puzzle and inventing the puzzle at the
+          same time.
         </h1>
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
+          I started with the classics: C and C++. That’s where I learned how to
+          tell computers what to do, dig into memory management, and even
+          understand how CPUs tick. Then came Java, which opened the door beyond
+          the boring terminal and let me actually build things that felt real.
         </h1>
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt.
+          Soon I was developing Android apps, and by the end of my second year,
+          I had one live on the Play Store. That little milestone boosted my
+          confidence like crazy. From there, curiosity kept pulling me
+          forward—frontend with React, backend with Node, dabbling in cloud
+          deployments, and now even exploring software architecture. Somewhere
+          along the way, I also found myself explaining concepts to
+          batchmates—turns out teaching is its own kind of superpower.
         </h1>
+        <h1>
+          Outside the screen, I’m usually on the football field or at the gym
+          (because balancing code with cardio keeps me sane). I’m also a sucker
+          for anime and digging into ideas that can make life a little sharper,
+          smarter, and more interesting.
+        </h1>
+        <strong>
+          And yeah, the learning hasn’t stopped—it probably never will.
+        </strong>
       </FlexColumn>
     </FlexRowToColumn>
   );
@@ -119,10 +129,9 @@ const WorkSection = () => {
       <div className={`min-w-24 ${textLightDark}`}>Work</div>
       <FlexColumn className="gap-y-4 w-full">
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          dignissimos totam nesciunt, tempora impedit nemo, quisquam, mollitia
+          I kicked off my career by jumping into hackathons (earned money from
+          prizes), interning at a small startup, and freelancing for M.Tech
+          students from IIT Bombay.
         </h1>
         <FlexColumn className="gap-4 mt-3 md:mt-5 flex-col-reverse">
           {works.map((item) => (
@@ -156,7 +165,7 @@ const works: WorkCardType[] = [
     logo: "https://www.hackingly.in/_next/static/media/companyLogo.45fa23ea.png",
     role: "Freelance - Full Stack",
     name: "Hackingly",
-    duration: "6 Months",
+    duration: "3 Months",
     bgColor: "bg-orange-400",
     textColor: "text-white",
   },
@@ -215,7 +224,7 @@ const ResumeSection = () => {
   );
 };
 
- const ConnectSection = () => {
+const ConnectSection = () => {
   return (
     <FlexRowToColumn>
       <div className={`min-w-24 ${textLightDark}`}>Connect</div>
@@ -236,29 +245,6 @@ export interface ConnectType {
   place: string;
   link: string;
 }
-
- const connects: ConnectType[] = [
-  {
-    logo: Mail,
-    place: "Mail",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Github,
-    place: "Github",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Instagram,
-    place: "Instagram",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Twitter,
-    place: "Twitter",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-];
 
 const ConnectComp = ({ Item }: { Item: ConnectType }) => {
   return (

@@ -32,7 +32,7 @@ const HeroSection = () => {
         <div className="pic-stats flex gap-10 items-center">
           <Image
             className="rounded-full"
-            src={`/my-logo.png`}
+            src={`/media/my-logo.png`}
             alt={"Logo"}
             width="75"
             height="75"
@@ -90,8 +90,8 @@ const BlogsSection = () => {
 const TODOSection = () => {
   return (
     <ul className="list-decimal mt-16">
-      <h1>Add Blog view count</h1>
-      <h1>Make Image support in app better(store them locally/lazyloading)</h1>
+      <li>Add Footer to blogs pages</li>
+      <li>Work on Blog Section (write some real blogs, Add images, font size)</li>
     </ul>
   );
 };

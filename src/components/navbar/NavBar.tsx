@@ -16,7 +16,7 @@ const NavBar = () => {
         <Link href="/">
           <Image
             className="rounded-full object-center filter dark:invert"
-            src={`/marsh-logo.png`}
+            src={`/media/marsh-logo.png`}
             alt={"Logo"}
             width="35"
             height="35"

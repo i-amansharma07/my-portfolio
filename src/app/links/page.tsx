@@ -7,41 +7,10 @@ import PageLayout, {
 } from "@/components/PageLayout";
 import Image from "next/image";
 import { useEffect } from "react";
+import { connects } from "../../../utils/constants";
 
 import { ConnectType } from "../me/page";
-import {
-  Dot,
-  FileUser,
-  FileText,
-  Mail,
-  Github,
-  Instagram,
-  Twitter,
-  MoveUpRight,
-} from "lucide-react";
-
-const connects: ConnectType[] = [
-  {
-    logo: Mail,
-    place: "Mail",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Github,
-    place: "Github",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Instagram,
-    place: "Instagram",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-  {
-    logo: Twitter,
-    place: "Twitter",
-    link: "mailto:amanofficialsharma@gmail.com",
-  },
-];
+import { MoveUpRight } from "lucide-react";
 
 export default function Links() {
   useEffect(() => {
@@ -54,7 +23,7 @@ export default function Links() {
         <FlexColumn className="items-center gap-y-0">
           <Image
             className="rounded-full"
-            src={`/my-logo.png`}
+            src={`/media/my-logo.png`}
             alt={"Logo"}
             width="90"
             height="90"
