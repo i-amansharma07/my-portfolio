@@ -2,17 +2,25 @@
 
 import PageLayout, { FadeInSection, FlexColumn } from "@/components/PageLayout";
 import { useEffect } from "react";
-import { allBlogs, BlogType } from "../../../utils/BlogsData";
+import { allBlogs, findBlogsWithTag } from "../../../utils/BlogsData";
+import type { BlogType } from "../../../utils/BlogsData";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Blogs({
-  filteredBlogs,
-}: {
-  filteredBlogs: BlogType[];
-}) {
+function BlogsContent() {
+  const searchParams = useSearchParams();
+  let tag = searchParams.get("tag");
+  const filteredBlogs: BlogType[] | null = tag ? findBlogsWithTag(tag) : null;
+
   useEffect(() => {
-    document.title = "Blogs | Aman";
-  }, []);
+    if (tag) {
+      document.title = "Blogs | Aman";
+    } else {
+      document.title = "Tag | Aman";
+    }
+  }, [tag]);
+
   return (
     <PageLayout>
       <FadeInSection>
@@ -25,7 +33,7 @@ export default function Blogs({
                   } found`
                 : "Thoughts"}
             </h1>
-            <div className="Sub-heading flex  items-center text-light-dim  dark:text-dark-dim text-sm">
+            <div className="Sub-heading flex items-center text-light-dim dark:text-dark-dim text-sm">
               {!filteredBlogs && (
                 <h1>
                   {allBlogs.length} bleh about life, engineering and more ...
@@ -41,6 +49,14 @@ export default function Blogs({
         </FlexColumn>
       </FadeInSection>
     </PageLayout>
+  );
+}
+
+export default function Blogs() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogsContent />
+    </Suspense>
   );
 }
 

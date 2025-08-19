@@ -1,4 +1,4 @@
-export interface BlogType {
+interface BlogType {
   id: string;
   title: string;
   image: string;
@@ -7,7 +7,7 @@ export interface BlogType {
   readTime: string;
   dateTime: string;
 }
-export interface TagType {
+interface TagType {
   personal: string;
   tech: string;
   fe: string;
@@ -78,7 +78,7 @@ const allBlogs: BlogType[] = [
   },
 ];
 
-export const findBlogsWithTag = (tag: string) => {
+const findBlogsWithTag = (tag: string) => {
   let blogArray: BlogType[] = [];
 
   blogArray = allBlogs.filter((blog) => {
@@ -87,5 +87,5 @@ export const findBlogsWithTag = (tag: string) => {
 
   return blogArray;
 };
-
-export { allBlogs };
+export type { BlogType, TagType };
+export { allTags, allBlogs, findBlogsWithTag };

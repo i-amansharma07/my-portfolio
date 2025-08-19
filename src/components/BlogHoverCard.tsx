@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { CalendarDays } from "lucide-react";
 import Link from "next/link";
-import { Blog } from "@/app/HomePageComponents";
 
-export default function BlogHoverCard({ blog }: { blog: Blog }) {
+export default function BlogHoverCard({ blog }: { blog: any }) {
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 

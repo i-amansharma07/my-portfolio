@@ -215,7 +215,7 @@ const ResumeSection = () => {
   );
 };
 
-export const ConnectSection = () => {
+ const ConnectSection = () => {
   return (
     <FlexRowToColumn>
       <div className={`min-w-24 ${textLightDark}`}>Connect</div>
@@ -237,7 +237,7 @@ export interface ConnectType {
   link: string;
 }
 
-export const connects: ConnectType[] = [
+ const connects: ConnectType[] = [
   {
     logo: Mail,
     place: "Mail",

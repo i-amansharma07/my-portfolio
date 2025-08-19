@@ -7,8 +7,41 @@ import PageLayout, {
 } from "@/components/PageLayout";
 import Image from "next/image";
 import { useEffect } from "react";
-import { MoveUpRight } from "lucide-react";
-import { ConnectType, connects } from "../me/page";
+
+import { ConnectType } from "../me/page";
+import {
+  Dot,
+  FileUser,
+  FileText,
+  Mail,
+  Github,
+  Instagram,
+  Twitter,
+  MoveUpRight,
+} from "lucide-react";
+
+const connects: ConnectType[] = [
+  {
+    logo: Mail,
+    place: "Mail",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Github,
+    place: "Github",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Instagram,
+    place: "Instagram",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+  {
+    logo: Twitter,
+    place: "Twitter",
+    link: "mailto:amanofficialsharma@gmail.com",
+  },
+];
 
 export default function Links() {
   useEffect(() => {
