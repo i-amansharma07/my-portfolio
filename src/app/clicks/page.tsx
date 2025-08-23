@@ -118,6 +118,12 @@ const allClicks: ClickType[] = [
     year: "Aug 2022",
   },
   {
+    title: "Dalai Hills",
+    image: "/media/dalai-hills.jpg",
+    description: `Enjoying the view`,
+    year: "Apr 2023",
+  },
+  {
     title: "BIT Mesra",
     image: "/media/bits.jpg",
     description: `Great experience in 780 acres campus`,
