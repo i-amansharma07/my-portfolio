@@ -16,7 +16,7 @@ interface WorkType {
   redirect?: Boolean;
 }
 
-export const allWork: WorkType[] = [
+const allWork: WorkType[] = [
   {
     id: "",
     title: "Hoo Bank",

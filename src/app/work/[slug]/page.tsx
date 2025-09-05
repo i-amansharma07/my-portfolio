@@ -4,14 +4,12 @@ import PageLayout, { FadeInSection } from "@/components/PageLayout";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useEffect, useState } from "react";
-import { allWork } from "../page";
+
 
 const WorkPage = () => {
   const pathName = usePathname();
   const subpath = pathName.split("/");
   const workId = subpath[subpath.length - 1];
-  const currentWorkObj = allWork.find((item) => item.id === workId);
-
   const [WorkComponent, setWorkComponent] = useState<null | any>(null);
 
   useEffect(() => {
