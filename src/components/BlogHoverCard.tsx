@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CalendarDays } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BlogHoverCard({ blog }: { blog: any }) {
   const [visible, setVisible] = useState(false);
@@ -52,12 +53,14 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
         >
           <div className="flex justify-between space-x-4">
             <img
-              className="rounded-md max-w-[95px] max-h-[95px] min-w-[95px] min-h-[95px]"
               src={blog.image}
-              alt={blog.id}
+              alt={blog.title || "Blog thumbnail"}
+              loading="lazy"
+              className="rounded-md w-[95px] h-[95px] object-cover shadow-sm hover:shadow-md transition duration-200"
             />
+
             <div className="space-y-1">
-              <h4 className="text-base font-semibold">{blog.title}</h4>
+              <h4 className="text-base font-semibold line-clamp-1">{blog.title}</h4>
               <p className="text-sm line-clamp-2 text-light-dim dark:text-dark-dim ">
                 {blog.description}
               </p>

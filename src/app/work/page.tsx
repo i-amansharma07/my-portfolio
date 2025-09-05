@@ -1,10 +1,6 @@
 import Image from "next/image";
 
-import PageLayout, {
-  FadeInSection,
-  FlexColumn,
-  FlexRowToColumn,
-} from "@/components/PageLayout";
+import PageLayout, { FadeInSection, FlexColumn } from "@/components/PageLayout";
 import { textLightDark } from "../../../utils/styles";
 import { Dot } from "lucide-react";
 import Link from "next/link";
@@ -15,24 +11,38 @@ interface WorkType {
   image: string;
   description: string;
   year: string;
+  github?: string;
+  livelink?: string;
+  redirect?: Boolean;
 }
 
-const allWork: WorkType[] = [
+export const allWork: WorkType[] = [
+  {
+    id: "",
+    title: "Hoo Bank",
+    image: "/work/hoo-bank.png",
+    description: `Exploring react alongwith taliwind css and created a static home page and made it responsive this time `,
+    year: "2023",
+    livelink: "https://660087873840ca22e1d9ae6a--demobanksite.netlify.app/",
+    redirect: true,
+  },
+  {
+    id: "",
+    title: "Amazon home page clone",
+    image: "/work/amazon.png",
+    description: `This was the moment I stepped into web development.
+    I built my very first static web app (non-reponsive) as a way to explore and understand the basics of HTML and CSS.`,
+    year: "2023",
+    livelink: "https://i-amansharma07.github.io/amazon-clone/",
+    redirect: true,
+  },
   {
     id: "blood-sweat-cheers",
     title: "Blood Sweat Cheers",
-    image: "/media/bsc.png",
-    description: `Workout App for gym rats`,
+    image: "/work/bsc.png",
+    description: `Android based Workout App for gym rats`,
     year: "2022",
-  },
-  {
-    id: "brain-rotting",
-    title: "Brain rotting",
-    image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*eRDecUz13fOHlm8x2WzZgQ.jpeg",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi.`,
-    year: "2024",
+    github: "https://github.com/i-amansharma07/Blood-Sweat-Cheers",
   },
 ];
 
@@ -42,15 +52,15 @@ export default function Work() {
       <FadeInSection className="p-2">
         <FlexColumn className="gap-y-1 mb-16 md:mb-24">
           <h1 className="text-3xl text-black dark:text-white font-bold">
-            Build fast, Ship fast
+            My Learning Journey
           </h1>
           <h1 className="text-sm text-light-dim dark:text-dark-dim">
-            Here are some of the side-projects I've worked on.
+            List of projects from basic to advance
           </h1>
         </FlexColumn>
         <FlexColumn className="gap-y-10 md:gap-y-14">
           {allWork.map((work) => (
-            <WorkCard key={work.id} work={work} />
+            <WorkCard key={work.title} work={work} />
           ))}
         </FlexColumn>
       </FadeInSection>
@@ -60,28 +70,47 @@ export default function Work() {
 
 const WorkCard = ({ work }: { work: WorkType }) => {
   return (
-    <Link href={`/work/${work.id}`} className="block">
-      <div className="flex flex-col md:flex-row gap-5 md:opacity-65 hover:opacity-100 transition-opacity">
-        <div className="w-full h-56 md:w-[300px] md:h-[150px] flex-shrink-0 overflow-hidden rounded-md bg-gray-100">
-          <Image
-            className="w-full h-full object-cover bg-yellow"
-            src={work.image}
-            alt={work.title}
-            width={300}
-            height={150}
-            sizes="(max-width: 768px) 100vw, 300px"
-          />
-        </div>
-        
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center text-base">
-            <h1>{work.title}</h1>
-            <Dot size={20} />
-            <h2 className={textLightDark}>{work.year}</h2>
-          </div>
-          <p className={`${textLightDark} text-sm`}>{work.description}</p>
-        </div>
+    <>
+      {work.redirect ? (
+        <a
+          href={work.livelink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="your-tailwind-classes"
+        >
+          <CardInner work={work} />
+        </a>
+      ) : (
+        <Link href={`/work/${work.id}`} className="block">
+          <CardInner work={work} />
+        </Link>
+      )}
+    </>
+  );
+};
+
+const CardInner = ({ work }: { work: WorkType }) => {
+  return (
+    <div className="flex flex-col md:flex-row gap-5 md:opacity-80 hover:opacity-100 transition-opacity">
+      <div className="w-full h-56 md:w-[300px] md:h-[150px] flex-shrink-0 overflow-hidden rounded-md bg-gray-100">
+        <Image
+          className="w-full h-full object-cover bg-yellow"
+          src={work.image}
+          alt={work.title}
+          width={300}
+          height={150}
+          sizes="(max-width: 768px) 100vw, 300px"
+        />
       </div>
-    </Link>
+
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center text-base">
+          <h1>{work.title}</h1>
+          <Dot size={20} />
+          <h2 className={textLightDark}>{work.year}</h2>
+        </div>
+        <p className={`${textLightDark} text-sm`}>{work.description}</p>
+      </div>
+    </div>
   );
 };

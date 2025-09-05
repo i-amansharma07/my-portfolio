@@ -2,11 +2,7 @@
 
 import PageLayout, { FlexRowToColumn } from "@/components/PageLayout";
 import { FadeInSection, FlexColumn } from "@/components/PageLayout";
-import {
-  Dot,
-  FileText,
-  MoveUpRight,
-} from "lucide-react";
+import { Dot, FileText, MoveUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { textLightDark } from "../../../utils/styles";
 import { LucideProps } from "lucide-react";
@@ -110,10 +106,10 @@ const AboutSection = () => {
           batchmates—turns out teaching is its own kind of superpower.
         </h1>
         <h1>
-          Outside the screen, I’m usually on the football field or at the gym
-          (because balancing code with cardio keeps me sane). I’m also a sucker
-          for anime and digging into ideas that can make life a little sharper,
-          smarter, and more interesting.
+          Outside the screen, I’m usually on the football field, at the gym
+          (because balancing code with cardio keeps me sane) or riding my bike.
+          I’m also a sucker for anime and digging into ideas that can make life
+          a little sharper, smarter, and more interesting.
         </h1>
         <strong>
           And yeah, the learning hasn’t stopped—it probably never will.

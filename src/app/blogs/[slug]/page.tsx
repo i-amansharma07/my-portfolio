@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useEffect, useState } from "react";
 import { allBlogs, BlogType } from "../../../../utils/BlogsData";
+import Image from "next/image";
 
 const BlogPage = () => {
   const pathName = usePathname();
@@ -41,6 +42,7 @@ const BlogPage = () => {
     <PageLayout>
       {BlogComponent ? (
         <FadeInSection>
+          <BlogHeader blog={blogArrayItem} />
           <BlogComponent />
           <BlogFooter blog={blogArrayItem} />
         </FadeInSection>
@@ -53,6 +55,18 @@ const BlogPage = () => {
   );
 };
 
+const BlogHeader = ({ blog }: { blog: BlogType | undefined }) => {
+  return (
+    <div className="flex flex-col gap-5">
+      <h1 className="text-4xl leading-tight font-bold">{blog?.title}</h1>
+      <h2 className="text-light-dim  dark:text-dark-dim text-sm mt-[-20px]">
+        {blog?.readTime} read
+      </h2>
+      <img className="w-full mb-10" src={blog?.image} />
+    </div>
+  );
+};
+
 const BlogFooter = ({ blog }: { blog: BlogType | undefined }) => {
   return (
     <FlexColumn className="mb-10">
@@ -61,6 +75,21 @@ const BlogFooter = ({ blog }: { blog: BlogType | undefined }) => {
         {blog?.tags?.map((tag) => (
           <TagCard key={tag} tagName={tag} />
         ))}
+      </div>
+      <div className="flex gap-10 mt-10">
+        <Image
+          className="rounded-full"
+          src={`/media/my-logo.png`}
+          alt={"Logo"}
+          width="55"
+          height="55"
+        />
+        <div className="flex flex-col gap-1">
+          <h1 className="text-xl">Aman Sharma</h1>
+          <h2 className="text-light-dim  dark:text-dark-dim text-sm">
+            {blog?.dateTime}
+          </h2>
+        </div>
       </div>
     </FlexColumn>
   );

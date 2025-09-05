@@ -8,6 +8,7 @@ import {
   TrendingUp,
   MoveUpRight,
   CalendarDays,
+  TrophyIcon
 } from "lucide-react";
 import Image from "next/image";
 import BlogHoverCard from "@/components/BlogHoverCard";
@@ -27,6 +28,8 @@ const HeroSection = () => {
             <h1>Music</h1>
             <Dot size={20} />
             <h1>Comedy</h1>
+            <Dot size={20} />
+            <h1>Riding</h1>
           </div>
         </div>
         <div className="pic-stats flex gap-10 items-center">
@@ -39,12 +42,12 @@ const HeroSection = () => {
           />
           <div className="flex flex-col gap-2 text-sm">
             <div className="flex cursor-pointer gap-5 transition delay-150 duration-200  text-light-dim hover:text-black dark:hover:text-white dark:text-dark-dim items-center">
-              <GitMerge size={15} />
-              <h1>40 Repository Stars</h1>
+              <TrophyIcon size={15} />
+              <h1>Smart India Hackathon Finalist</h1>
             </div>
             <div className="flex cursor-pointer gap-5 transition delay-150 duration-200  text-light-dim hover:text-black dark:hover:text-white dark:text-dark-dim items-center">
               <TrendingUp size={15} />
-              <h1>6989 Blog Views</h1>
+              <h1>1,316 App users</h1>
             </div>
           </div>
         </div>
@@ -90,8 +93,8 @@ const BlogsSection = () => {
 const TODOSection = () => {
   return (
     <ul className="list-decimal mt-16">
-      <li>Add Footer to blogs pages</li>
-      <li>Work on Blog Section (write some real blogs, Add images, font size)</li>
+      <li>Add more blogs and work items</li>
+      <li>Fix hero section with correct stats</li>
     </ul>
   );
 };

@@ -4,11 +4,13 @@ import PageLayout, { FadeInSection } from "@/components/PageLayout";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useEffect, useState } from "react";
+import { allWork } from "../page";
 
-const BlogPage = () => {
+const WorkPage = () => {
   const pathName = usePathname();
   const subpath = pathName.split("/");
   const workId = subpath[subpath.length - 1];
+  const currentWorkObj = allWork.find((item) => item.id === workId);
 
   const [WorkComponent, setWorkComponent] = useState<null | any>(null);
 
@@ -50,8 +52,8 @@ const BlogPage = () => {
 
 const WorkFooter = () => {
   return (
-    <div className="flex flex-col gap-2 mt-5 mb-5">
-      <h1 className="text-xl font-semibold text-black dark:text-white">
+    <div className="flex flex-col gap-2 mt-10 mb-5">
+      <h1 className="text-2xl font-semibold text-black dark:text-white">
         Contact
       </h1>
       <p className="mt-2 text-sm  text-light-dim dark:text-dark-dim">
@@ -66,4 +68,4 @@ const WorkFooter = () => {
   );
 };
 
-export default BlogPage;
+export default WorkPage;

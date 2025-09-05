@@ -13,6 +13,7 @@ interface TagType {
   fe: string;
   be: string;
   randomThoughts: string;
+  philosophy: string;
 }
 
 const allTags: TagType = {
@@ -21,60 +22,34 @@ const allTags: TagType = {
   fe: "Front-end",
   be: "Back-end",
   randomThoughts: "randomThoughts",
+  philosophy: "Philosophy",
 };
 
 const allBlogs: BlogType[] = [
   {
-    id: "alice-in-the-tinder-land",
-    title: "Alice in the tinder land",
-    image:
-      "https://lumiere-a.akamaihd.net/v1/images/p_aliceinwonderland_19875_ad409a49.jpeg?region=0%2C0%2C540%2C810",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-       maxime molestiae soluta exercitationem? Nostrum quia, similique 
-       officiis incidunt expedita corrupti.`,
-    tags: [allTags.personal, allTags.fe],
+    id: "marcus-aurelius",
+    title: "Marcus Aurelius: Conquering the Self, Not the World",
+    image: "/blogs/marcus.jpg",
+    description: `The story of Rome’s philosopher king who proved that true 
+    strength lies not in ruling an empire, but in mastering the
+     mind and living with virtue.`,
+    tags: [allTags.philosophy, allTags.randomThoughts],
     readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
+    dateTime: "mon sept 01, 2025",
   },
   {
     id: "react-vs-next",
-    title: "React VS Next",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWWBJ_Aqr1Phj1-0hqgYWv_weTm0AzidO0g&s",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-       maxime molestiae soluta exercitationem? Nostrum quia, similique 
-       officiis incidunt expedita corrupti.`,
-    tags: [allTags.personal, allTags.personal],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
-  {
-    id: "brain-rotting",
-    title: "Brain rotting",
-    image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*eRDecUz13fOHlm8x2WzZgQ.jpeg",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-       maxime molestiae soluta exercitationem? Nostrum quia, similique 
-       officiis incidunt expedita corrupti.`,
-    tags: [allTags.personal, allTags.fe],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
-  },
-  {
-    id: "react-server-component",
-    title: "Understanding React Server Components: A Practical Guide",
-    image:
-      "https://lumiere-a.akamaihd.net/v1/images/p_aliceinwonderland_19875_ad409a49.jpeg?region=0%2C0%2C540%2C810",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Saepe sit nisi eligendi! Possimus nostrum et reiciendis inventore. Voluptatibus illum 
-       maxime molestiae soluta exercitationem? Nostrum quia, similique 
-       officiis incidunt expedita corrupti.`,
-    tags: [allTags.personal, allTags.randomThoughts, allTags.fe],
-    readTime: "8 mins",
-    dateTime: "sat oct 12, 2024",
+    title: "Next.js vs React: How Frontend Development is Evolving",
+    image: "/blogs/react-vs-next.png",
+    description: `React is a powerful UI library, but it leaves developers to handle routing,
+     SEO, and performance optimizations on their own. Next.js builds on React 
+     by adding file-based routing, server-side rendering, static site generation, 
+     API routes, and built-in optimizations like image handling. This makes Next.js 
+     the go-to framework for building production-ready apps, 
+     while React remains great for UI components.`,
+    tags: [allTags.tech, allTags.fe],
+    readTime: "5 mins",
+    dateTime: "fri jun 27, 2025",
   },
 ];
 
