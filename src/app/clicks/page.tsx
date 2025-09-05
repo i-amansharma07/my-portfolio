@@ -21,7 +21,7 @@ export default function Clicks() {
             Photographs
           </h1>
           <h1 className="text-sm text-light-dim dark:text-dark-dim">
-            memories stoed in bits & bytes
+            memories stored in bits & bytes
           </h1>
 
           <div className="mt-10 columns-1 sm:columns-2 md:columns-3 gap-5 space-y-5">
