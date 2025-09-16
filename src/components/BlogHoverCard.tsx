@@ -35,7 +35,7 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
             <h1 className="text-sm opacity-70">{blog.dateTime}</h1>
           </div>
           <img
-            className="rounded-md max-w-[125px] max-h-[125px] min-w-[125px] min-h-[125px]"
+            className="w-32 h-32 rounded-md object-cover"
             src={blog.image}
             alt={blog.id}
           />
@@ -56,11 +56,13 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
               src={blog.image}
               alt={blog.title || "Blog thumbnail"}
               loading="lazy"
-              className="rounded-md w-[95px] h-[95px] object-cover shadow-sm hover:shadow-md transition duration-200"
+              className="w-24 h-24 rounded-md object-cover shadow-sm hover:shadow-md transition-shadow duration-200"
             />
 
             <div className="space-y-1">
-              <h4 className="text-base font-semibold line-clamp-1">{blog.title}</h4>
+              <h4 className="text-base font-semibold line-clamp-1">
+                {blog.title}
+              </h4>
               <p className="text-sm line-clamp-2 text-light-dim dark:text-dark-dim ">
                 {blog.description}
               </p>
