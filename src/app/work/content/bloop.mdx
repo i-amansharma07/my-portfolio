@@ -1,0 +1,50 @@
+# Bloop - Building a Real-Time Chat Application From Scratch
+
+Bloop is a full-stack real-time chat application that I built to sharpen
+my understanding of end-to-end product development. The goal was simple:
+create a fast, clean, and responsive chat experience where messages
+appear instantly---just like modern messaging apps.
+
+[Live here](https://bloop-fe.netlify.app/)
+
+[View on Github](https://github.com/i-amansharma07/Bloop)
+
+## Why I Built Bloop
+
+Working on multiple client projects helped me grow as a frontend
+developer, but I wanted something that challenged my
+fundamentals---state management, backend concepts, websockets, database design, and
+real-time data flow.
+
+Bloop became that playground where I could experiment, break things, and
+understand how modern chat apps actually work under the hood.
+
+## Key Features
+
+- Real-time messaging with WebSockets
+- Live updates without page reload
+- Secure API layer for chatting and user operations
+- Database-backed message persistence
+- Clean and responsive UI built with Tailwind
+- Reliable deployments using Vercel & NeonDB
+
+## Tech Stack
+
+- **Frontend:** React, JavaScript, Tailwind
+- **Backend:** Node.js (Express), WebSockets
+- **Database:** Postgres + Prisma ORM
+- **Hosting:** Netlify (Frontend) + NeonDB (Serverless Postgres) + Render (Node backend)
+- **Tools:** Claude for brainstorming and UI/UX, Postman for API workflows, Git, Github
+
+### 🏗️ Architecture
+
+Bloop uses a client--server WebSocket setup:
+
+1.  Frontend connects to a WebSocket server.
+2.  When a user sends a message:
+    - It's instantly pushed to the WebSocket server.
+    - Server broadcasts it to all connected clients in that chat.
+3.  Messages are then stored in Postgres using Prisma.
+4.  UI updates happen in real-time without refreshing.
+
+![App Architecture](/work/bloop-arch.png)
