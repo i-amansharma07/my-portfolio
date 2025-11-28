@@ -72,7 +72,7 @@ export default function Work() {
             My Learning Journey
           </h1>
           <h1 className="text-sm text-light-dim dark:text-dark-dim">
-            List of projects from basic to advance
+            From concept to execution—built with intention and clarity.
           </h1>
         </FlexColumn>
         <FlexColumn className="gap-y-10 md:gap-y-14">
