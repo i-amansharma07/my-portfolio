@@ -11,11 +11,13 @@ const nextConfig = {
   },
 }
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-})
+// Enable MDX
+const withMDX = () => (config: any)=>{
+  config.pageExtensions = ["js", "jsx", "ts", "tsx", "md", "mdx"];
+  config.experimental = config.experimental || {};
+  config.experimental.mdxRs = true;
+  return config;
+};
 
-// Merge MDX config with Next.js config
-export default withMDX(nextConfig)
-
+export default withMDX()(nextConfig);
 
