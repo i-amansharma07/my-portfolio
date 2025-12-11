@@ -79,7 +79,7 @@ const BlogFooter = ({ blog }: { blog: BlogType | undefined }) => {
       <div className="flex gap-10 mt-10">
         <Image
           className="rounded-full"
-          src={`/media/my-logo.png`}
+          src={`/media/my-logo.webp`}
           alt={"Logo"}
           width="55"
           height="55"

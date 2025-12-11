@@ -53,7 +53,7 @@ export default function Me() {
           </FlexColumn>
           <img
             className="cover-image rounded-md  max-h-[300px] w-full min-h-[300px] -mt-10 object-cover object-bottom"
-            src="/media/dalai-hills.jpg"
+            src="/media/dalai-hills.webp"
             alt={"cover-image"}
           />
           {MeSections.map((Item) => {
@@ -150,7 +150,7 @@ interface WorkCardType {
 
 const works: WorkCardType[] = [
   {
-    logo: "https://internshala-uploads.internshala.com/logo/62e0e4c38530b1658905795.png.webp",
+    logo: "https://internshala-uploads.internshala.com/logo/62e0e4c38530b1658905795.webp.webp",
     role: "Intern -  Android dev",
     name: "BrickedIn",
     duration: "3 Months",
@@ -158,7 +158,7 @@ const works: WorkCardType[] = [
     textColor: "text-orange-500",
   },
   {
-    logo: "https://www.hackingly.in/_next/static/media/companyLogo.45fa23ea.png",
+    logo: "https://www.hackingly.in/_next/static/media/companyLogo.45fa23ea.webp",
     role: "Freelance - Full Stack",
     name: "Hackingly",
     duration: "3 Months",
@@ -166,7 +166,7 @@ const works: WorkCardType[] = [
     textColor: "text-white",
   },
   {
-    logo: "https://i0.wp.com/greyspacedigital.com/wp-content/uploads/2025/01/GS_Logo_White.png?fit=384%2C49&ssl=1",
+    logo: "https://i0.wp.com/greyspacedigital.com/wp-content/uploads/2025/01/GS_Logo_White.webp?fit=384%2C49&ssl=1",
     role: "SDE",
     name: "Greyspace",
     duration: "Present(1.5yrs)",

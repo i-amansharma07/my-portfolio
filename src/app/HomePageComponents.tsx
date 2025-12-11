@@ -35,7 +35,7 @@ const HeroSection = () => {
         <div className="pic-stats flex gap-10 items-center">
           <Image
             className="rounded-full"
-            src={`/media/my-logo.png`}
+            src={`/media/my-logo.webp`}
             alt={"Logo"}
             width="75"
             height="75"

@@ -23,7 +23,7 @@ export default function Links() {
         <FlexColumn className="items-center gap-y-0">
           <Image
             className="rounded-full"
-            src={`/media/my-logo.png`}
+            src={`/media/my-logo.webp`}
             alt={"Logo"}
             width="90"
             height="90"

@@ -20,7 +20,7 @@ const allWork: WorkType[] = [
   {
     id: "",
     title: "Portfolio",
-    image: "/work/portfolio.png",
+    image: "/work/portfolio.webp",
     description: `Next JS based personal portfolio website inlcudes blogging support, deployed on Vercel`,
     year: "2025",
     livelink: "https://aman-me.vercel.app/",
@@ -29,7 +29,7 @@ const allWork: WorkType[] = [
   {
     id: "bloop",
     title: "Bloop",
-    image: "/work/bloop.png",
+    image: "/work/bloop.webp",
     description: `Realtime chat app powered with web scokets`,
     year: "2024",
     github: "https://github.com/i-amansharma07/Bloop",
@@ -37,7 +37,7 @@ const allWork: WorkType[] = [
   // {
   //   id: "",
   //   title: "Hoo Bank",
-  //   image: "/work/hoo-bank.png",
+  //   image: "/work/hoo-bank.webp",
   //   description: `Exploring react alongwith taliwind css and created a static home page and made it responsive this time `,
   //   year: "2023",
   //   livelink: "https://660087873840ca22e1d9ae6a--demobanksite.netlify.app/",
@@ -46,7 +46,7 @@ const allWork: WorkType[] = [
   // {
   //   id: "",
   //   title: "Amazon home page clone",
-  //   image: "/work/amazon.png",
+  //   image: "/work/amazon.webp",
   //   description: `This was the moment I stepped into web development.
   //   I built my very first static web app (non-reponsive) as a way to explore and understand the basics of HTML and CSS.`,
   //   year: "2023",
@@ -56,7 +56,7 @@ const allWork: WorkType[] = [
   {
     id: "blood-sweat-cheers",
     title: "Blood Sweat Cheers",
-    image: "/work/bsc.png",
+    image: "/work/bsc.webp",
     description: `Android based Workout App for gym rats`,
     year: "2022",
     github: "https://github.com/i-amansharma07/Blood-Sweat-Cheers",

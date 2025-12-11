@@ -100,38 +100,38 @@ interface ClickType {
 const allClicks: ClickType[] = [
   {
     title: "Morning in Himachal",
-    image: "/media/kasol-morning.jpg",
+    image: "/media/kasol-morning.webp",
     description: `Woke up with this view in a village of Himachal Pradesh called Kasol`,
     year: "Apr 2023",
   },
   {
     title: "Tosh",
-    image: "/media/bike.jpg",
+    image: "/media/bike.webp",
     description: `Riding classic 350 on moutains`,
     year: "Apr 2023",
   },
 
   {
     title: "Smart India Hackathon",
-    image: "/media/sih.jpg",
+    image: "/media/sih.webp",
     description: `Coded an app over 2 days without sleep, high on caffeine`,
     year: "Aug 2022",
   },
   {
     title: "Dalai Hills",
-    image: "/media/dalai-hills.jpg",
+    image: "/media/dalai-hills.webp",
     description: `Enjoying the view`,
     year: "Apr 2023",
   },
   {
     title: "BIT Mesra",
-    image: "/media/bits.jpg",
+    image: "/media/bits.webp",
     description: `Great experience in 780 acres campus`,
     year: "Aug 2022",
   },
   {
     title: "Challal",
-    image: "/media/halt-bike.jpg",
+    image: "/media/halt-bike.webp",
     description: `Enjoying the view`,
     year: "Apr 2023",
   },

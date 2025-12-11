@@ -29,7 +29,7 @@ const allBlogs: BlogType[] = [
   {
     id: "marcus-aurelius",
     title: "Marcus Aurelius: Conquering the Self, Not the World",
-    image: "/blogs/marcus.jpg",
+    image: "/blogs/marcus.webp",
     description: `The story of Rome’s philosopher king who proved that true 
     strength lies not in ruling an empire, but in mastering the
      mind and living with virtue.`,
@@ -40,7 +40,7 @@ const allBlogs: BlogType[] = [
   {
     id: "react-vs-next",
     title: "Next.js vs React: How Frontend Development is Evolving",
-    image: "/blogs/react-vs-next.png",
+    image: "/blogs/react-vs-next.webp",
     description: `React is a powerful UI library, but it leaves developers to handle routing,
      SEO, and performance optimizations on their own. Next.js builds on React 
      by adding file-based routing, server-side rendering, static site generation, 
