@@ -14,6 +14,8 @@ interface TagType {
   be: string;
   randomThoughts: string;
   philosophy: string;
+  ai: string;
+  exploration: string;
 }
 
 const allTags: TagType = {
@@ -23,9 +25,21 @@ const allTags: TagType = {
   be: "Back-end",
   randomThoughts: "randomThoughts",
   philosophy: "Philosophy",
+  ai: "AI",
+  exploration: "Exploration",
 };
 
 const allBlogs: BlogType[] = [
+  {
+    id: "wtf-ai",
+    title: "WTF is LLM, Agentic AI and AI Agent",
+    image: "/blogs/llm-cover.webp",
+    description: `AI is full of buzzwords right now, LLM, Agents, Agentic AI, Autonomous systems.
+If you're building things or just exploring the space, it can feel confusing.`,
+    tags: [allTags.ai, allTags.tech, allTags.exploration],
+    readTime: "10 mins",
+    dateTime: "sat march 07, 2026",
+  },
   {
     id: "marcus-aurelius",
     title: "Marcus Aurelius: Conquering the Self, Not the World",
@@ -47,7 +61,7 @@ const allBlogs: BlogType[] = [
      API routes, and built-in optimizations like image handling. This makes Next.js 
      the go-to framework for building production-ready apps, 
      while React remains great for UI components.`,
-    tags: [allTags.tech, allTags.fe],
+    tags: [allTags.tech, allTags.ai, allTags.exploration],
     readTime: "5 mins",
     dateTime: "fri jun 27, 2025",
   },

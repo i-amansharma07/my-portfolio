@@ -1,0 +1,154 @@
+## WTF is an LLM, Agentic Workflow, and AI Agent?
+##
+> AI is full of buzzwords right now — _LLM_, _Agents_, _Agentic AI_, _Autonomous Systems_. If you're building things or just exploring the space, it can feel overwhelming.
+
+In this post, we'll break down **three core concepts** that power most modern AI systems — simply, practically, and with real-world examples so you can actually tell them apart.
+
+---
+
+## The Three Concepts at a Glance
+
+## 1. LLM — Large Language Model 
+
+An **LLM** is essentially a **text prediction machine**.
+
+It reads your prompt and predicts the most probable next words. That's it.
+
+- ❌ No decisions
+- ❌ No tools
+- ❌ No autonomy
+
+**Just generate text based on context.**
+
+### How it works
+
+```
+User Prompt → LLM → Response
+```
+
+### Example
+
+You ask: _"Write a Python function to sort an array."_
+
+The LLM replies with code — but it **does not run it**, test it, or fix errors. It simply generates text.
+
+### Analogy
+
+> 📚 Think of an LLM as **a very smart librarian who answers questions but never leaves the desk.**
+
+##
+
+## 2. Agentic Workflow
+
+Now imagine **connecting multiple LLM calls together** in a predefined process. That's an **Agentic Workflow**.
+
+Here, **humans define the steps** — the LLM just performs each one. The workflow is **fixed**.
+
+### Example
+
+You want to auto-generate a blog post. The workflow might be:
+
+1. Research the topic
+2. Extract key points
+3. Write a draft
+4. Polish the writing
+
+```
+User Request
+    ↓
+Research the topic (LLM1)
+    ↓
+Extract key points (LLM2)
+    ↓
+ Write a draft (LLM3)
+    ↓
+Polish the writing (LLM4)
+    ↓
+Final Output
+```
+
+Each step calls an LLM — but the system **doesn't decide what to do next**. You already defined the pipeline.
+
+### Analogy
+
+> 🍝 Think of it as **following a cooking recipe** — boil water, add pasta, add sauce. Fixed steps, no creativity, just execution.
+
+##
+
+## 3. AI Agent 🧠
+
+Now things get interesting, AI Agent **reAct** i.e Reasoning and Actions.
+
+An **AI Agent** is a system that can **decide what actions to take**. Instead of following fixed steps, it runs a **reasoning loop** — thinking, acting, observing, and adapting until the job is done.
+
+### The agent loop
+
+```
+Thought → Action → Observation → Repeat
+```
+
+### How it works
+
+```
+User Request
+    ↓
+LLM Reasoning
+    ↓
+Choose Tool  (Search / Code / Database / ...)
+    ↓
+Execute Tool
+    ↓
+Observe Result
+    ↓
+Repeat until task is complete
+```
+
+>💡 Point to remember : AI Agents have access to tools and they decide which tool is more sutiable to complete current task
+
+### Example
+
+You ask: _"Find the best laptop under $1,500 and compare performance."_
+
+The agent figures out its own steps:
+
+1. Search for laptops in that price range
+2. Extract specs from results
+3. Fetch benchmark scores
+4. Compare performance metrics
+5. Generate a final report
+
+**The workflow was never predefined.** The agent figured it out itself.
+
+### Analogy
+
+> 👨‍🍳 Think of it as **a professional chef**. You say _"cook me a great dinner"_ — the chef decides the dish, the ingredients, and how to prepare it. That's **autonomous**.
+
+---
+
+## Why Most Companies Don't Use Full Agents Yet
+
+Fully autonomous agents are exciting, but they come with real tradeoffs:
+
+- 💸 **Expensive** — each loop can trigger multiple LLM calls
+- 🎛️ **Hard to control** — difficult to constrain or audit behavior
+- 🎲 **Unpredictable** — can take unexpected paths to complete tasks
+
+So most production systems today sit somewhere in between:
+
+```
+LLM  +  Agentic Workflow  =  Reliability + Control
+```
+
+---
+
+## 📍 Summary
+
+Think of these as **levels of intelligence and autonomy**:
+
+```
+LLM  →  Agentic Workflow  →  AI Agent
+```
+
+![Summary](/blogs/llm-summary.webp)
+
+Understanding this difference won't just help you talk about AI — it'll help you **design better systems instead of just calling APIs blindly**.
