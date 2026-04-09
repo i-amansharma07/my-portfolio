@@ -169,7 +169,7 @@ const works: WorkCardType[] = [
     logo: "https://i0.wp.com/greyspacedigital.com/wp-content/uploads/2025/01/GS_Logo_White.webp?fit=384%2C49&ssl=1",
     role: "SDE",
     name: "Greyspace",
-    duration: "Present(1.5yrs)",
+    duration: "Present(2.5+yrs)",
     bgColor: "bg-black",
     textColor: "text-white",
   },
