@@ -1,11 +1,17 @@
 import PageLayout from "@/components/PageLayout";
-import { HeroSection, BlogsSection, TODOSection } from "./HomePageComponents";
+import {
+  HeroSection,
+  BlogsSection,
+  NpxSection,
+  TODOSection,
+} from "./HomePageComponents";
 
 const Home = () => {
   return (
     <PageLayout>
       <HeroSection />
       <BlogsSection />
+      <NpxSection />
       {/* <TODOSection /> */}
     </PageLayout>
   );
