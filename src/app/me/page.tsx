@@ -208,7 +208,7 @@ const ResumeSection = () => {
           resume below.
         </h1>
         <a
-          href="https://drive.google.com/file/d/1ANhTcKimfdVlUcQ0-kcGm_Scl61By8QO/view?usp=sharing"
+          href="https://drive.google.com/file/d/1vZPGsWI7pY_RCeorrfNXmVab2mRZh7YL/view?usp=sharing"
           target="_blank"
           className="underline-offset-4 inline-flex w-fit items-center gap-2 rounded-lg border  border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-200 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800"
         >
