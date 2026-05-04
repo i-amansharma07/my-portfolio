@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
-      <body className={`${pageBg} antialiased ${inter.className}`}>
+      <body suppressHydrationWarning className={`${pageBg} antialiased ${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

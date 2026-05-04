@@ -16,6 +16,7 @@ interface TagType {
   philosophy: string;
   ai: string;
   exploration: string;
+  science: string;
 }
 
 const allTags: TagType = {
@@ -27,9 +28,20 @@ const allTags: TagType = {
   philosophy: "Philosophy",
   ai: "AI",
   exploration: "Exploration",
+  science: "Science",
 };
 
 const allBlogs: BlogType[] = [
+  {
+    id: "science-and-dinosaurs",
+    title: "Understanding Science and seeing Dinosaurs",
+    image: "/public/blogs/science-dino-cover.avif",
+    description: `AI is full of buzzwords right now, LLM, Agents, Agentic AI, Autonomous systems.
+If you're building things or just exploring the space, it can feel confusing.`,
+    tags: [allTags.science, allTags.tech, allTags.exploration],
+    readTime: "10 mins",
+    dateTime: "mon may 04, 2026",
+  },
   {
     id: "wtf-ai",
     title: "WTF is LLM, Agentic AI and AI Agent",
