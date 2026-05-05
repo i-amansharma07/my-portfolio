@@ -35,12 +35,12 @@ const allBlogs: BlogType[] = [
   {
     id: "science-and-dinosaurs",
     title: "Understanding Science and seeing Dinosaurs",
-    image: "/public/blogs/science-dino-cover.avif",
-    description: `AI is full of buzzwords right now, LLM, Agents, Agentic AI, Autonomous systems.
-If you're building things or just exploring the space, it can feel confusing.`,
-    tags: [allTags.science, allTags.tech, allTags.exploration],
-    readTime: "10 mins",
-    dateTime: "mon may 04, 2026",
+    image: "/blogs/science-dino-cover.webp",
+    description: `Light carries the memory of everything that ever happened on Earth — 
+    and it's still travelling. Here's my thought`,
+    tags: [allTags.science, allTags.randomThoughts],
+    readTime: "12 mins",
+    dateTime: "Mon may 04, 2026",
   },
   {
     id: "wtf-ai",
@@ -48,9 +48,9 @@ If you're building things or just exploring the space, it can feel confusing.`,
     image: "/blogs/llm-cover.webp",
     description: `AI is full of buzzwords right now, LLM, Agents, Agentic AI, Autonomous systems.
 If you're building things or just exploring the space, it can feel confusing.`,
-    tags: [allTags.ai, allTags.tech, allTags.exploration],
+    tags: [allTags.ai, allTags.exploration, allTags.tech],
     readTime: "10 mins",
-    dateTime: "sat march 07, 2026",
+    dateTime: "Sat march 07, 2026",
   },
   {
     id: "marcus-aurelius",
@@ -61,7 +61,7 @@ If you're building things or just exploring the space, it can feel confusing.`,
      mind and living with virtue.`,
     tags: [allTags.philosophy, allTags.randomThoughts],
     readTime: "8 mins",
-    dateTime: "mon sept 01, 2025",
+    dateTime: "Mon sept 01, 2025",
   },
   {
     id: "react-vs-next",
@@ -75,7 +75,7 @@ If you're building things or just exploring the space, it can feel confusing.`,
      while React remains great for UI components.`,
     tags: [allTags.tech, allTags.ai, allTags.exploration],
     readTime: "5 mins",
-    dateTime: "fri jun 27, 2025",
+    dateTime: "Fri jun 27, 2025",
   },
 ];
 
