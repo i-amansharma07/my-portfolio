@@ -1,25 +1,28 @@
-"use client";
-
 import PageLayout, { FadeInSection, FlexColumn } from "@/components/PageLayout";
-import { useEffect } from "react";
 import { allBlogs, findBlogsWithTag } from "../../../utils/BlogsData";
 import type { BlogType } from "../../../utils/BlogsData";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Metadata } from "next";
 
-function BlogsContent() {
-  const searchParams = useSearchParams();
-  let tag = searchParams.get("tag");
-  const filteredBlogs: BlogType[] | null = tag ? findBlogsWithTag(tag) : null;
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-  useEffect(() => {
-    if (tag) {
-      document.title = "Blogs | Aman";
-    } else {
-      document.title = "Tag | Aman";
-    }
-  }, [tag]);
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { tag } = await searchParams;
+  return {
+    title: tag ? "Blogs | Aman" : "Tag | Aman",
+  };
+}
+
+export default async function Blogs({ searchParams }: Props) {
+  const { tag } = await searchParams;
+  const tagStr = typeof tag === "string" ? tag : undefined;
+  const filteredBlogs: BlogType[] | null = tagStr
+    ? findBlogsWithTag(tagStr)
+    : null;
 
   return (
     <PageLayout>
@@ -49,14 +52,6 @@ function BlogsContent() {
         </FlexColumn>
       </FadeInSection>
     </PageLayout>
-  );
-}
-
-export default function Blogs() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <BlogsContent />
-    </Suspense>
   );
 }
 

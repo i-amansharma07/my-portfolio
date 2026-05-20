@@ -1,9 +1,7 @@
-"use client";
-
 import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
+import { ImageProps } from "next/image";
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import ZoomableImage from "@/components/ZoomableImage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,33 +70,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </pre>
     ),
     img: (props) => {
-      const [open, setOpen] = useState(false);
-      return (
-        <>
-          <Image
-            {...(props as ImageProps)}
-            width={1200}
-            height={600}
-            className="w-full max-h-[500px] h-auto rounded-lg shadow-md my-6 object-contain cursor-zoom-in bg-transparent"
-            alt={props.alt || ""}
-            onClick={() => setOpen(true)}
-          />
-          {open && (
-            <div
-              className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 cursor-zoom-out"
-              onClick={() => setOpen(false)}
-            >
-              <Image
-                {...(props as ImageProps)}
-                width={1600}
-                height={900}
-                className="max-w-[90%] max-h-[90%] rounded-lg  object-contain"
-                alt={props.alt || ""}
-              />
-            </div>
-          )}
-        </>
-      );
+      return <ZoomableImage {...(props as ImageProps)} />;
     },
     ...components,
   };

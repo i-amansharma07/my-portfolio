@@ -1,22 +1,20 @@
-"use client";
-
 import PageLayout, {
   FadeInSection,
   FlexColumn,
   FlexRow,
 } from "@/components/PageLayout";
 import Image from "next/image";
-import { useEffect } from "react";
 import { connects } from "../../../utils/constants";
 
 import { ConnectType } from "../me/page";
 import { MoveUpRight } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Links | Aman",
+};
 
 export default function Links() {
-  useEffect(() => {
-    document.title = "Links | Aman";
-  }, []);
-
   return (
     <PageLayout>
       <FadeInSection>

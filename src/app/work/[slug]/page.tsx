@@ -1,49 +1,33 @@
-"use client";
-
 import PageLayout, { FadeInSection } from "@/components/PageLayout";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { JSX, useEffect, useState } from "react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
+export const metadata: Metadata = {
+  title: "Work | Aman",
+};
 
-const WorkPage = () => {
-  const pathName = usePathname();
-  const subpath = pathName.split("/");
-  const workId = subpath[subpath.length - 1];
-  const [WorkComponent, setWorkComponent] = useState<null | any>(null);
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
-  useEffect(() => {
-    const loadBlog = async () => {
-      try {
-        const module = await import(`../content/${workId}.mdx`);
-        setWorkComponent(() => module.default);
-      } catch (err) {
-        const module = await import(`../../not-found`);
-        setWorkComponent(() => module.default);
-      }
-    };
+const WorkPage = async ({ params }: Props) => {
+  const { slug: workId } = await params;
 
-    if (workId) {
-      loadBlog();
-    }
-  }, [workId]);
-
-  useEffect(() => {
-    document.title = "Blog | Aman";
-  }, []);
+  let WorkComponent;
+  try {
+    const module = await import(`../content/${workId}.mdx`);
+    WorkComponent = module.default;
+  } catch (err) {
+    notFound();
+  }
 
   return (
     <PageLayout>
-      {WorkComponent ? (
-        <FadeInSection>
-          <WorkComponent />
-          <WorkFooter />
-        </FadeInSection>
-      ) : (
-        <div className="w-full h-full justify-center items-center">
-          Fetching...
-        </div>
-      )}
+      <FadeInSection>
+        <WorkComponent />
+        <WorkFooter />
+      </FadeInSection>
     </PageLayout>
   );
 };

@@ -1,52 +1,24 @@
-"use client";
-
 import PageLayout, { FlexRowToColumn } from "@/components/PageLayout";
 import { FadeInSection, FlexColumn } from "@/components/PageLayout";
 import { Dot, FileText, MoveUpRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import { textLightDark } from "../../../utils/styles";
 import { LucideProps } from "lucide-react";
 import { ForwardRefExoticComponent } from "react";
 import { connects } from "../../../utils/constants";
+import RotatingTitle from "./RotatingTitle";
+import { Metadata } from "next";
 
-const whoMeTranslation = [
-  "कौन, मैं?",
-  "Qui, moi ?",
-  "谁，我？",
-  "누구, 나?",
-  "誰、私？",
-  "Кто, я?",
-  "কে, আমি?",
-  "Who Me?",
-];
+export const metadata: Metadata = {
+  title: "Me | Aman",
+};
 
 export default function Me() {
-  const [whoMe, setWhoMe] = useState("Who Me?");
-
-  useEffect(() => {
-    document.title = "Me | Aman";
-  }, []);
-
-  useEffect(() => {
-    let current = 0;
-    setInterval(() => {
-      if (current === whoMeTranslation.length) current = 0;
-      setWhoMe(whoMeTranslation[current]);
-      current++;
-    }, 4000);
-  }, []);
-
   return (
     <PageLayout>
       <FadeInSection>
         <FlexColumn className="gap-y-20">
           <FlexColumn className="heading gap-y-1">
-            <h1
-              key={whoMe}
-              className="text-3xl text-black dark:text-white font-bold animate-slide-in-left"
-            >
-              {whoMe}
-            </h1>
+            <RotatingTitle />
             <h1 className="text-sm text-light-dim dark:text-dark-dim">
               Okay so...
             </h1>

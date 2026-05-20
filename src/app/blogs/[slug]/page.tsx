@@ -1,56 +1,40 @@
-"use client";
-
 import PageLayout, { FadeInSection, FlexColumn } from "@/components/PageLayout";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { JSX, useEffect, useState } from "react";
 import { allBlogs, BlogType } from "../../../../utils/BlogsData";
 import Image from "next/image";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-const BlogPage = () => {
-  const pathName = usePathname();
-  const subpath = pathName.split("/");
-  const blogId = subpath[subpath.length - 1];
+export const metadata: Metadata = {
+  title: "Blog | Aman",
+};
 
-  const [BlogComponent, setBlogComponent] = useState<null | any>(null);
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+const BlogPage = async ({ params }: Props) => {
+  const { slug: blogId } = await params;
 
   const blogArrayItem: BlogType | undefined = allBlogs.find(
     (item) => item.id === blogId
   );
 
-  useEffect(() => {
-    const loadBlog = async () => {
-      try {
-        const module = await import(`../content/${blogId}.mdx`);
-        setBlogComponent(() => module.default);
-      } catch (err) {
-        const module = await import(`../../not-found`);
-        setBlogComponent(() => module.default);
-      }
-    };
-
-    if (blogId) {
-      loadBlog();
-    }
-  }, [blogId]);
-
-  useEffect(() => {
-    document.title = "Blog | Aman";
-  }, []);
+  let BlogComponent;
+  try {
+    const module = await import(`../content/${blogId}.mdx`);
+    BlogComponent = module.default;
+  } catch (err) {
+    notFound();
+  }
 
   return (
     <PageLayout>
-      {BlogComponent ? (
-        <FadeInSection>
-          <BlogHeader blog={blogArrayItem} />
-          <BlogComponent />
-          <BlogFooter blog={blogArrayItem} />
-        </FadeInSection>
-      ) : (
-        <div className="w-full h-full justify-center items-center">
-          Fetching...
-        </div>
-      )}
+      <FadeInSection>
+        <BlogHeader blog={blogArrayItem} />
+        <BlogComponent />
+        <BlogFooter blog={blogArrayItem} />
+      </FadeInSection>
     </PageLayout>
   );
 };
@@ -62,7 +46,7 @@ const BlogHeader = ({ blog }: { blog: BlogType | undefined }) => {
       <h2 className="text-light-dim  dark:text-dark-dim text-sm mt-[-20px]">
         {blog?.readTime} read
       </h2>
-      <img className="w-full mb-10" src={blog?.image} />
+      <img className="w-full mb-10" src={blog?.image} alt={blog?.title} />
     </div>
   );
 };
