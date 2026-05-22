@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { FadeInSection } from "@/components/PageLayout";
 
-export default function NpxSection() {
+export default function NpxSection({command, title}: {command: string, title: string}) {
   const [copied, setCopied] = useState(false);
-  const command = "npx hey-aman-sharma";
 
   const copy = () => {
     navigator.clipboard.writeText(command);
@@ -16,7 +15,7 @@ export default function NpxSection() {
   return (
     <FadeInSection className="flex flex-col">
       <h1 className="mb-3 text-sm text-light-dim dark:text-dark-dim">
-        Grab my info in your terminal :)
+        {title}
       </h1>
       <div className="w-fit inline-flex items-center gap-3  bg-white dark:bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 font-mono text-sm">
         <span className="text-neutral-500 select-none">$</span>

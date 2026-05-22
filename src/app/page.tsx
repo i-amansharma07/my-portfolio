@@ -11,7 +11,8 @@ const Home = () => {
     <PageLayout>
       <HeroSection />
       <BlogsSection />
-      <NpxSection />
+      <NpxSection command="curl https://f15.world/aman.sh | bash" title="Grab my info in your terminal using curl"/>
+      <NpxSection command="npx hey-aman-sharma" title="or with NPM  :)"/>
       {/* <TODOSection /> */}
     </PageLayout>
   );
