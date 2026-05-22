@@ -139,9 +139,9 @@ const works: WorkCardType[] = [
   },
   {
     logo: "https://i0.wp.com/greyspacedigital.com/wp-content/uploads/2025/01/GS_Logo_White.webp?fit=384%2C49&ssl=1",
-    role: "SDE",
+    role: "SDE-I",
     name: "Greyspace",
-    duration: "Present(2.5+yrs)",
+    duration: "Present(3+yrs)",
     bgColor: "bg-black",
     textColor: "text-white",
   },
