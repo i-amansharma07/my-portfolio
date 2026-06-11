@@ -14,16 +14,24 @@ Lets understand MCP with an example
 ```markdown
 User:
 "Get me the prices of iPhone 17 from these 5 websites."
-↓
+
+    ↓
+
 Claude:
 "I need a scraping tool."
-↓ (MCP)
+
+    ↓ (MCP)
+
 Apify MCP Server
 └─ scrape_website(url) //tool-1
 └─ extract_product_data(...) //tool-2
-↓
+
+    ↓
+
 Returns structured data
-↓
+
+    ↓
+
 Claude: understands data and show
 "Here are the prices across the websites..."
 ```
