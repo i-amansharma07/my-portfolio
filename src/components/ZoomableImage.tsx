@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image, { ImageProps } from "next/image";
 
 export default function ZoomableImage(props: ImageProps) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -16,20 +22,23 @@ export default function ZoomableImage(props: ImageProps) {
         alt={props.alt || ""}
         onClick={() => setOpen(true)}
       />
-      {open && (
-        <div
-          className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 cursor-zoom-out"
-          onClick={() => setOpen(false)}
-        >
-          <Image
-            {...props}
-            width={1600}
-            height={900}
-            className="max-w-[90%] max-h-[90%] rounded-lg object-contain"
-            alt={props.alt || ""}
-          />
-        </div>
-      )}
+      {mounted &&
+        open &&
+        createPortal(
+          <div
+            className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 cursor-zoom-out"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              {...props}
+              width={1600}
+              height={900}
+              className="max-w-[90%] max-h-[90%] rounded-lg object-contain"
+              alt={props.alt || ""}
+            />
+          </div>,
+          document.body
+        )}
     </>
   );
 }

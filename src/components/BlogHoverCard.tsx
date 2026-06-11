@@ -22,8 +22,8 @@ export default function BlogHoverCard({ blog }: { blog: any }) {
     >
       {/* Trigger */}
       <div className="hidden md:flex w-fit cursor-pointer">
-        <Link href={`/blogs/${blog.id}`} className="flex gap-x-32 lg:gap-x-40">
-          <h1>{blog.dateTime}</h1>
+        <Link href={`/blogs/${blog.id}`} className="flex">
+          <h1 className="w-64 shrink-0">{blog.dateTime}</h1>
           <h1>{blog.title}</h1>
         </Link>
       </div>

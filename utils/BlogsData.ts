@@ -33,6 +33,15 @@ const allTags: TagType = {
 
 const allBlogs: BlogType[] = [
   {
+    id: "mcp-claude-code",
+    title: "MCP with Claude Code",
+    image: "/blogs/wtf-is-mcp-claude.webp",
+    description: `In this Blog we will first understand what an MCP is and create our very own MCP server and let claude code use it`,
+    tags: [allTags.ai, allTags.tech],
+    readTime: "15 mins",
+    dateTime: "Wed Jun 10, 2026",
+  },
+  {
     id: "science-and-dinosaurs",
     title: "Understanding Science and seeing Dinosaurs",
     image: "/blogs/science-dino-cover.webp",

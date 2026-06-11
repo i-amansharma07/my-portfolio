@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import { ImageProps } from "next/image";
 import { Inter } from "next/font/google";
 import ZoomableImage from "@/components/ZoomableImage";
+import CodeBlock from "@/components/CodeBlock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,21 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h3 className="text-2xl font-medium text-gray-700 dark:text-gray-300 mt-8 mb-3">
         {children}
       </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-2">
+        {children}
+      </h4>
+    ),
+    h5: ({ children }) => (
+      <h5 className="text-lg font-medium text-gray-600 dark:text-gray-400 mt-5 mb-2">
+        {children}
+      </h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="text-base font-semibold text-gray-600 dark:text-gray-400 mt-4 mb-1 uppercase tracking-wide">
+        {children}
+      </h6>
     ),
     p: ({ children }) => (
       <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
@@ -59,15 +75,56 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </blockquote>
     ),
-    code: ({ children }) => (
-      <code className="px-1 py-0.5 rounded text-sm font-mono bg-gray-100 dark:bg-gray-800">
+    // Inline code — skip extra styling when inside a highlighted code block
+    code: ({ children, className, ...props }) => {
+      if (className?.startsWith('language-')) {
+        return <code className={className} {...props}>{children}</code>
+      }
+      return (
+        <code className="px-1 py-0.5 rounded text-sm font-mono bg-gray-100 dark:bg-gray-800" {...props}>
+          {children}
+        </code>
+      )
+    },
+    pre: ({ children, ...props }) => (
+      <CodeBlock {...(props as any)}>
         {children}
-      </code>
+      </CodeBlock>
     ),
-    pre: ({ children }) => (
-      <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto mb-6 text-sm leading-relaxed shadow-md">
+    hr: () => (
+      <hr className="my-8 border-none h-px bg-gray-200 dark:bg-gray-700" />
+    ),
+    table: ({ children }) => (
+      <div className="overflow-x-auto mb-6">
+        <table className="min-w-full text-sm border-collapse">
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({ children }) => (
+      <thead className="bg-gray-100 dark:bg-gray-800">
         {children}
-      </pre>
+      </thead>
+    ),
+    tbody: ({ children }) => (
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+        {children}
+      </tbody>
+    ),
+    tr: ({ children }) => (
+      <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+        {children}
+      </tr>
+    ),
+    th: ({ children }) => (
+      <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+        {children}
+      </td>
     ),
     img: (props) => {
       return <ZoomableImage {...(props as ImageProps)} />;
