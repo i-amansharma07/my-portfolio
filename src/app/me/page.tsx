@@ -180,7 +180,7 @@ const ResumeSection = () => {
           resume below.
         </h1>
         <a
-          href="https://drive.google.com/file/d/1I9wRu3yFwOX23Vceze5HMcX-r3ClxnLO/view?usp=sharing"
+          href="https://drive.google.com/file/d/1pLmsfWKuVKOeeW-nsokBaqDhLFHJdxkP/view?usp=drive_link"
           target="_blank"
           className="underline-offset-4 inline-flex w-fit items-center gap-2 rounded-lg border  border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-200 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800"
         >
